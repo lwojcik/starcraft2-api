@@ -1,32 +1,29 @@
-const profile = require('./profile');
-const ladder = require('./ladder');
-const account = require('./account');
-const legacy = require('./legacy');
+const Profile = require('./api/profile');
+const Ladder = require('./api/ladder');
+const Account = require('./api/account');
+const Legacy = require('./api/legacy');
 
 class StarCraft2API {
-    set clientID(clientID) {
-        this._clientID = clientID;
+    constructor(clientID, clientSecret) {
+        this.clientID = clientID;
+        this.clientSecret = clientSecret;
     }
-
-    set clientSecret(clientSecret) {
-        this._clientSecret = clientSecret;
-    }
-
+    
     Profile() {
-        return profile();
+        return new Profile(this.clientID, this.clientSecret);
     }
 
     Ladder() {
-        return ladder();
+        return new Ladder(this.clientID, this.clientSecret);
     }
 
     Account() {
-        return account();
+        return new Account(this.clientID, this.clientSecret);
     }
 
     Legacy() {
-        return legacy();
+        return new Legacy(this.clientID, this.clientSecret);
     }
 }
 
-module.exports = starcraft2api;
+module.exports = StarCraft2API;
