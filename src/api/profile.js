@@ -8,10 +8,7 @@ class Profile {
     }
 
     getStatic(server, region, locale) {
-        const clientID = this.clientID;
-        const clientSecret = this.clientSecret;
-
-        const BnetClient = new BattleNet(clientID, clientSecret);
+        const BnetClient = new BattleNet(this.clientID, this.clientSecret);
         return BnetClient.query(server, `/sc2/static/profile/${region}`, locale);
     }
 }

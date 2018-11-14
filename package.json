@@ -1,5 +1,5 @@
 {
-  "name": "starcraft2.js",
+  "name": "starcraft2-api",
   "version": "0.0.1",
   "description": "Wrapper for StarCraft II API",
   "main": "src/index.js",
@@ -9,6 +9,7 @@
   "author": "Łukasz Wójcik",
   "license": "MIT",
   "dependencies": {
+    "blizzard-battlenet-api": "0.0.1",
     "node-fetch": "2.2.1"
   },
   "devDependencies": {
