@@ -1,0 +1,10 @@
+src
+tsconfig.json
+tslint.json
+.prettierrc
+tests
+coverage
+appveyor.yml
+.travis.yml
+jest.config.js
+setupJest.ts

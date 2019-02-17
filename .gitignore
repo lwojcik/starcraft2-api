@@ -47,5 +47,11 @@ ssl/
 # Local database 
 db/
 
-# Test data folder
-__TESTDATA__
+# Build
+dist/
+
+# js files in src folder
+src/*.js
+
+# generated docs
+docs/
