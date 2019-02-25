@@ -1,27 +1,45 @@
-// import { BlizzAPI } from 'blizzapi';
+import { BlizzAPI, BlizzUtils } from 'blizzapi';
+import { QueryOptions } from 'blizzapi/dist/lib/interfaces';
+import { ClientSecret, AccessToken, ClientId, RegionIdOrName } from 'blizzapi/dist/lib/types';
 
 // tslint:disable no-class no-expression-statement no-this
-class StarCraft2API {
-  readonly region: number | string;
-  readonly clientId: string;
-  readonly clientSecret: string;
-  readonly accessToken: string;
-  readonly options: object;
-
+export default class StarCraft2API extends BlizzAPI {
   constructor(
-    region: number | string,
-    clientId: string,
-    clientSecret: string,
-    accessToken?: string,
-    options?: object,
+    region: RegionIdOrName,
+    clientId: ClientId,
+    clientSecret: ClientSecret,
+    accessToken?: AccessToken,
+    options?: QueryOptions,
   ) {
-    this.region = region;
-    this.clientId = clientId;
-    this.clientSecret = clientSecret;
-    this.accessToken = accessToken || '';
-    this.options = options || {};
+    super(region, clientId, clientSecret, accessToken, options);
   }
+
+  // getStaticProfileData(region: RegionIdOrName, locale?)
+
+  // getProfileMetadata(regionId, realmId, profileId, locale?)
+
+  // getProfile(regionId, realmId, profileId, locale?)
+
+  // getLadderSummary(regionId, realmId, profileId, locale?)
+
+  // getLadder(regionId, realmId, profileId, ladderId, locale?)
+
+  // getGrandmasterLeaderboard(regionId);
+
+  // getSeason(regionId);
+
+  // getPlayerAccount(accountId);
+
+  // getLegacyProfile(regionId, realmId, profileId, locale?)
+
+  // getLegacyLadders(regionId, realmId, profileId)
+
+  // getLegacyMatchHistory(regionId, realmId, profileId)
+
+  // getLegacyLadder(regionId, ladderId)
+
+  // getLegacyAchievements(regionId)
+
+  // getLegacyRewards(regionId)
 }
 // tslint:enable no-class no-expression-statement
-
-export default StarCraft2API;
