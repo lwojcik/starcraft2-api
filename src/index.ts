@@ -1,4 +1,4 @@
-import { BlizzAPI, BlizzUtils } from 'blizzapi';
+import { BlizzAPI } from 'blizzapi';
 import { QueryOptions } from 'blizzapi/dist/lib/interfaces';
 import { ClientSecret, AccessToken, ClientId, RegionIdOrName } from 'blizzapi/dist/lib/types';
 
