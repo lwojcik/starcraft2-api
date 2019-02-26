@@ -1,6 +1,14 @@
-import { BlizzAPI } from 'blizzapi';
+import { BlizzAPI, BlizzUtils } from 'blizzapi';
 import { QueryOptions } from 'blizzapi/dist/lib/interfaces';
-import { ClientSecret, AccessToken, ClientId, RegionIdOrName } from 'blizzapi/dist/lib/types';
+import {
+  ClientSecret,
+  AccessToken,
+  ClientId,
+  RegionIdOrName,
+  RegionIdAsNumberOrString,
+  Locale,
+  Sc2Realm,
+} from 'blizzapi/dist/lib/types';
 
 // tslint:disable no-class no-expression-statement no-this
 export default class StarCraft2API extends BlizzAPI {
@@ -14,32 +22,107 @@ export default class StarCraft2API extends BlizzAPI {
     super(region, clientId, clientSecret, accessToken, options);
   }
 
-  // getStaticProfileData(region: RegionIdOrName, locale?)
+  queryStaticProfileData(regionId: RegionIdAsNumberOrString, locale?: Locale): Promise<object> {
+    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    return this.query(`/sc2/static/profile/${regionId}?locale=${queryLocale}`);
+  }
 
-  // getProfileMetadata(regionId, realmId, profileId, locale?)
+  queryProfileMetadata(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+    locale?: Locale,
+  ): Promise<object> {
+    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    return this.query(
+      `/sc2/metadata/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`,
+    );
+  }
 
-  // getProfile(regionId, realmId, profileId, locale?)
+  queryProfile(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+    locale?: Locale,
+  ): Promise<object> {
+    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    return this.query(`/sc2/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`);
+  }
 
-  // getLadderSummary(regionId, realmId, profileId, locale?)
+  queryLadderSummary(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+    locale?: Locale,
+  ): Promise<object> {
+    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    return this.query(
+      `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/summary?locale=${queryLocale}`,
+    );
+  }
 
-  // getLadder(regionId, realmId, profileId, ladderId, locale?)
+  queryPlayerLadder(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+    ladderId: number | string,
+    locale?: Locale,
+  ): Promise<object> {
+    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    return this.query(
+      `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/${ladderId}?locale=${queryLocale}`,
+    );
+  }
 
-  // getGrandmasterLeaderboard(regionId);
+  queryGrandmasterLeaderboard(regionId: RegionIdAsNumberOrString): Promise<object> {
+    return this.query(`/sc2/ladder/grandmaster/${regionId}`);
+  }
 
-  // getSeason(regionId);
+  querySeason(regionId: RegionIdAsNumberOrString): Promise<object> {
+    return this.query(`/sc2/ladder/season/${regionId}`);
+  }
 
-  // getPlayerAccount(accountId);
+  queryPlayerAccount(accountId: number | string): Promise<object> {
+    return this.query(`/s2/player/${accountId}`);
+  }
 
-  // getLegacyProfile(regionId, realmId, profileId, locale?)
+  queryLegacyProfile(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+  ): Promise<object> {
+    return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}`);
+  }
 
-  // getLegacyLadders(regionId, realmId, profileId)
+  queryLegacyLadders(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+  ): Promise<object> {
+    return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/ladders`);
+  }
 
-  // getLegacyMatchHistory(regionId, realmId, profileId)
+  queryLegacyMatchHistory(
+    regionId: RegionIdAsNumberOrString,
+    realmId: Sc2Realm,
+    profileId: number | string,
+  ): Promise<object> {
+    return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/matches`);
+  }
 
-  // getLegacyLadder(regionId, ladderId)
+  queryLegacyLadder(
+    regionId: RegionIdAsNumberOrString,
+    ladderId: number | string,
+  ): Promise<object> {
+    return this.query(`/sc2/legacy/ladder/${regionId}/${ladderId}`);
+  }
 
-  // getLegacyAchievements(regionId)
+  queryLegacyAchievements(regionId: RegionIdAsNumberOrString): Promise<object> {
+    return this.query(`/sc2/legacy/data/achievements/${regionId}`);
+  }
 
-  // getLegacyRewards(regionId)
+  queryLegacyRewards(regionId: RegionIdAsNumberOrString): Promise<object> {
+    return this.query(`/sc2/legacy/data/rewards/${regionId}`);
+  }
 }
 // tslint:enable no-class no-expression-statement
