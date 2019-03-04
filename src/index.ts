@@ -11,7 +11,7 @@ import {
 } from 'blizzapi/dist/lib/types';
 
 // tslint:disable no-class no-expression-statement no-this
-export default class StarCraft2API extends BlizzAPI {
+export class StarCraft2API extends BlizzAPI {
   constructor(
     region: RegionIdOrName,
     clientId: ClientId,

@@ -1,13 +1,13 @@
 {
   "name": "starcraft2-api",
-  "version": "0.0.8",
+  "version": "0.0.3",
   "description": "Feature-rich library for StarCraft II APIs",
   "homepage": "https://starcraft2-api.lukem.net",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "author": {
     "name": "Łukasz Wójcik",
-    "url": "https://www.lukaszwojcik.net/"
+    "url": "https://www.lukem.net/"
   },
   "license": "MIT",
   "repository": {
@@ -20,7 +20,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lukem.net/StarCraft2-API/blob/master/LICENSE"
+      "url": "https://github.com/lukemnet/StarCraft2-API/blob/master/LICENSE"
     }
   ],
   "scripts": {
@@ -35,27 +35,27 @@
     "blizzapi": "0.0.8"
   },
   "devDependencies": {
-    "@types/jest": "23.3.9",
-    "@types/node": "11.9.1",
+    "@types/jest": "24.0.9",
+    "@types/node": "11.10.4",
     "jest": "24.1.0",
     "prettier": "1.16.4",
-    "ts-jest": "23.10.5",
-    "tslint": "5.12.1",
+    "ts-jest": "24.0.0",
+    "tslint": "5.13.1",
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-eslint-rules": "5.4.0",
-    "tslint-immutable": "5.2.0",
+    "tslint-immutable": "5.3.0",
     "tslint-plugin-prettier": "2.0.1",
     "typescript": "3.3.3"
   },
   "keywords": [
+    "starcraft",
+    "starcraft2",
+    "sc2",
+    "api",
     "blizzard",
     "battlenet",
     "battle-net",
-    "battle-net-api",
-    "api",
-    "starcraft",
-    "starcraft2",
-    "sc2"
+    "battle-net-api"
   ]
 }
