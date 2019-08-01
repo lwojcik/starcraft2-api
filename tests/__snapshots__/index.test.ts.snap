@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StarCraft2API queryStaticProfileData should match snapshot 1`] = `
+Object {
+  "data": "sample_starcraft2api_data",
+}
+`;
