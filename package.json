@@ -33,7 +33,7 @@
     "dev": "tsc -w"
   },
   "dependencies": {
-    "blizzapi": "1.0.2"
+    "blizzapi": "1.1.0"
   },
   "devDependencies": {
     "@types/jest": "24.0.16",

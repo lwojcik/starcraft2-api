@@ -1,19 +1,17 @@
-import { BlizzAPI } from '../../blizzapi/dist';
-import BlizzAPIOptions from 'blizzapi/dist';
-import {
-  ClientSecret,
-  AccessToken,
-  ClientId,
-  RegionIdOrName,
+import blizzapi, {
+  BlizzAPIOptions,
   RegionIdAsNumberOrString,
   Locale,
-  Sc2Realm,
-} from 'blizzapi/@types';
+  Sc2Realm
+} from 'blizzapi';
 
-
-
+export interface PlayerObject {
+  regionId: RegionIdAsNumberOrString;
+  realmId: Sc2Realm;
+  profileId: number | string;
+}
 // tslint:disable no-class no-expression-statement no-this
-export class StarCraft2API extends BlizzAPI {
+export default class StarCraft2API extends blizzapi {
   constructor(options: BlizzAPIOptions) {
     super(options);
   }
@@ -23,48 +21,31 @@ export class StarCraft2API extends BlizzAPI {
     return this.query(`/sc2/static/profile/${regionId}?locale=${queryLocale}`);
   }
 
-  queryProfileMetadata(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-    locale?: Locale,
-  ): Promise<object> {
-    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+  queryProfileMetadata(playerObject: PlayerObject, locale?: Locale): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
+    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/metadata/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`,
     );
   }
 
-  queryProfile(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-    locale?: Locale,
-  ): Promise<object> {
-    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+  queryProfile(playerObject: PlayerObject, locale?: Locale): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
+    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(`/sc2/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`);
   }
 
-  queryLadderSummary(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-    locale?: Locale,
-  ): Promise<object> {
-    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+  queryLadderSummary(playerObject: PlayerObject, locale?: Locale): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
+    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/summary?locale=${queryLocale}`,
     );
   }
 
-  queryPlayerLadder(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-    ladderId: number | string,
-    locale?: Locale,
-  ): Promise<object> {
-    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+  queryPlayerLadder(playerObject: PlayerObject, ladderId: number | string, locale?: Locale): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
+    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/${ladderId}?locale=${queryLocale}`,
     );
@@ -79,30 +60,21 @@ export class StarCraft2API extends BlizzAPI {
   }
 
   queryPlayerAccount(accountId: number | string): Promise<object> {
-    return this.query(`/s2/player/${accountId}`);
+    return this.query(`/sc2/player/${accountId}`);
   }
 
-  queryLegacyProfile(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-  ): Promise<object> {
+  queryLegacyProfile(playerObject: PlayerObject): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
     return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}`);
   }
 
-  queryLegacyLadders(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-  ): Promise<object> {
+  queryLegacyLadders(playerObject: PlayerObject): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
     return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/ladders`);
   }
 
-  queryLegacyMatchHistory(
-    regionId: RegionIdAsNumberOrString,
-    realmId: Sc2Realm,
-    profileId: number | string,
-  ): Promise<object> {
+  queryLegacyMatchHistory(playerObject: PlayerObject): Promise<object> {
+    const { regionId, realmId, profileId } = playerObject;
     return this.query(`/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/matches`);
   }
 
