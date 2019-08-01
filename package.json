@@ -12,15 +12,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lukemnet/StarCraft2-API.git"
+    "url": "git://github.com/lukemnet/starcraft2-api.git"
   },
   "bugs": {
-    "url": "https://github.com/lukemnet/StarCraft2-API/issues"
+    "url": "https://github.com/lukemnet/starcraft2-api/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lukemnet/StarCraft2-API/blob/master/LICENSE"
+      "url": "https://github.com/lukemnet/starcraft2-api/blob/master/LICENSE"
     }
   ],
   "scripts": {
@@ -32,21 +32,21 @@
     "lint": "tslint --project tsconfig.json"
   },
   "dependencies": {
-    "blizzapi": "0.0.8"
+    "blizzapi": "1.0.1"
   },
   "devDependencies": {
-    "@types/jest": "24.0.9",
-    "@types/node": "11.10.4",
-    "jest": "24.1.0",
-    "prettier": "1.16.4",
-    "ts-jest": "24.0.0",
-    "tslint": "5.13.1",
+    "@types/jest": "24.0.16",
+    "@types/node": "12.6.8",
+    "jest": "24.8.0",
+    "prettier": "1.18.2",
+    "ts-jest": "24.0.2",
+    "tslint": "5.18.0",
     "tslint-config-airbnb": "5.11.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-eslint-rules": "5.4.0",
-    "tslint-immutable": "5.3.0",
+    "tslint-immutable": "6.0.1",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.3.3"
+    "typescript": "3.5.3"
   },
   "keywords": [
     "starcraft",
