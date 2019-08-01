@@ -3,83 +3,97 @@
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/ladder/grandmaster/1",
 }
 `;
 
 exports[`StarCraft2API queryLadderSummary should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/profile/1/1/123/ladder/summary?locale=en_US",
 }
 `;
 
 exports[`StarCraft2API queryLegacyAchievements should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/data/achievements/1",
 }
 `;
 
 exports[`StarCraft2API queryLegacyLadder should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/ladder/1/123",
 }
 `;
 
 exports[`StarCraft2API queryLegacyLadders should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/profile/1/1/123/ladders",
 }
 `;
 
 exports[`StarCraft2API queryLegacyMatchHistory should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/profile/1/1/123/matches",
 }
 `;
 
 exports[`StarCraft2API queryLegacyProfile should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/profile/1/1/123",
 }
 `;
 
 exports[`StarCraft2API queryLegacyRewards should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/legacy/data/rewards/1",
 }
 `;
 
 exports[`StarCraft2API queryPlayerAccount should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/player/123",
 }
 `;
 
 exports[`StarCraft2API queryPlayerLadder should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/profile/1/1/123/ladder/123?locale=en_US",
 }
 `;
 
 exports[`StarCraft2API queryProfile should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/profile/1/1/123?locale=en_US",
 }
 `;
 
 exports[`StarCraft2API queryProfileMetadata should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/metadata/profile/1/1/123?locale=en_US",
 }
 `;
 
 exports[`StarCraft2API querySeason should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/ladder/season/1",
 }
 `;
 
 exports[`StarCraft2API queryStaticProfileData should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
+  "endpoint": "/sc2/static/profile/1?locale=en_US",
 }
 `;

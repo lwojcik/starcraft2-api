@@ -1,12 +1,13 @@
 import StarCraft2API from '../src/index';
 
 describe('StarCraft2API', () => {
-  // tslint:disable-next-line: no-object-mutation
-  // StarCraft2API.prototype.query = jest.fn().mockImplementation(() => Promise.resolve({
-  //   data: 'sample_starcraft2api_data',
-  // }));
-
   const sc2api = new StarCraft2API({ region: 'us', clientId: 'sample_client_id', clientSecret: 'sample_client_secret' });
+
+  // tslint:disable-next-line: no-object-mutation
+  sc2api.query = jest.fn().mockImplementation((endpoint) => Promise.resolve({
+    endpoint,
+    data: 'sample_starcraft2api_data',
+  }));
 
   const player = {
     regionId: 1,
@@ -18,10 +19,7 @@ describe('StarCraft2API', () => {
   const ladderId = '123';
   const accountId = '123';
 
-  // tslint:disable-next-line: no-object-mutation
-  sc2api.query = jest.fn().mockImplementation(() => Promise.resolve({
-    data: 'sample_starcraft2api_data',
-  }));
+
 
   test('should be a class', () => {
     expect(StarCraft2API).toBeDefined();
