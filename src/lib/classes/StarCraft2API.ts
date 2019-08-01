@@ -12,7 +12,6 @@ export interface PlayerObject {
   realmId: Sc2Realm;
   profileId: number | string;
 }
-// tslint:disable no-class no-expression-statement no-this
 export default class StarCraft2API extends blizzapi {
   constructor(options: StarCraft2APIOptions) {
     super(options);
@@ -95,4 +94,3 @@ export default class StarCraft2API extends blizzapi {
     return this.query(`/sc2/legacy/data/rewards/${regionId}`);
   }
 }
-// tslint:enable no-class no-expression-statement
