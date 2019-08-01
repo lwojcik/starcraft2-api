@@ -1,5 +1,4 @@
 import StarCraft2API from '../src/index';
-const requiredSC2API = require('../src/index');
 
 describe('StarCraft2API', () => {
   // tslint:disable-next-line: no-object-mutation
@@ -27,10 +26,6 @@ describe('StarCraft2API', () => {
   test('should be a class', () => {
     expect(StarCraft2API).toBeDefined();
   });
-
-  test('should export as requireable module', () => {
-    expect(requiredSC2API).toBeDefined();
-  })
 
   test('should expose queryStaticProfileData method', () => {
     expect(sc2api.queryStaticProfileData).toBeDefined();
