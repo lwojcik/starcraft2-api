@@ -1,5 +1,5 @@
-import { BlizzAPI, BlizzUtils } from 'blizzapi';
-import { QueryOptions } from 'blizzapi/dist/lib/interfaces';
+import { BlizzAPI } from '../../blizzapi/dist';
+import BlizzAPIOptions from 'blizzapi/dist';
 import {
   ClientSecret,
   AccessToken,
@@ -8,22 +8,18 @@ import {
   RegionIdAsNumberOrString,
   Locale,
   Sc2Realm,
-} from 'blizzapi/dist/lib/types';
+} from 'blizzapi/@types';
+
+
 
 // tslint:disable no-class no-expression-statement no-this
 export class StarCraft2API extends BlizzAPI {
-  constructor(
-    region: RegionIdOrName,
-    clientId: ClientId,
-    clientSecret: ClientSecret,
-    accessToken?: AccessToken,
-    options?: QueryOptions,
-  ) {
-    super(region, clientId, clientSecret, accessToken, options);
+  constructor(options: BlizzAPIOptions) {
+    super(options);
   }
 
   queryStaticProfileData(regionId: RegionIdAsNumberOrString, locale?: Locale): Promise<object> {
-    const queryLocale = locale || BlizzUtils.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(`/sc2/static/profile/${regionId}?locale=${queryLocale}`);
   }
 

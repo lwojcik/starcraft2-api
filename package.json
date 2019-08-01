@@ -26,19 +26,21 @@
   "scripts": {
     "test": "jest",
     "clearTestCache": "jest --clearCache",
-    "build": "tsc",
-    "watch": "tsc -w",
+    "clean": "rimraf dist/*",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint --project tsconfig.json"
+    "lint": "tslint --project tsconfig.json",
+    "build": "npm run lint && npm run test && npm run clean && tsc",
+    "dev": "tsc -w"
   },
   "dependencies": {
-    "blizzapi": "1.0.1"
+    "blizzapi": "1.0.2"
   },
   "devDependencies": {
     "@types/jest": "24.0.16",
     "@types/node": "12.6.8",
     "jest": "24.8.0",
     "prettier": "1.18.2",
+    "rimraf": "2.6.3",
     "ts-jest": "24.0.2",
     "tslint": "5.18.0",
     "tslint-config-airbnb": "5.11.1",
