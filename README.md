@@ -11,7 +11,7 @@ Feature-rich library for easy access to [StarCraft II Community APIs](https://de
 ## Install
 
 ```bash
-npm install blizzapi
+npm install starcraft2-api
 ```
 
 ## Quick start
