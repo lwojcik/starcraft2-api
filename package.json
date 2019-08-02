@@ -1,6 +1,6 @@
 {
   "name": "starcraft2-api",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Feature-rich library for StarCraft II APIs",
   "homepage": "https://starcraft2-api.lukem.net",
   "main": "./dist/index.js",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/jest": "24.0.16",
-    "@types/node": "12.6.8",
+    "@types/node": "12.6.9",
     "jest": "24.8.0",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
