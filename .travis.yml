@@ -14,9 +14,7 @@ matrix:
     - os: windows
 
 node_js:
-  - '7'
   - '8'
-  - '9'
   - 'lts/*'
   - 'node'
 
