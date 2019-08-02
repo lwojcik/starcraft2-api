@@ -30,6 +30,7 @@ before_script:
 
 script:
   - npm run build
+  - codecov
 
 after_script:
   - if [[ "$TRAVIS_OS_NAME" != "linux" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
