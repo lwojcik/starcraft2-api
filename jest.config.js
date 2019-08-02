@@ -17,12 +17,16 @@ module.exports = {
   ],
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "**/src/**.{js,jsx,ts,tsx}",
+    "**/src/**",
+    "!**/tests/**.{js,ts}",
     "!**/*.{d.ts}",
     "!**/node_modules/**",
     "!**/dist/**"
   ],
-  "automock": false
+  "automock": false,
+  "setupFiles": [
+    "./setupJest.ts"
+  ]
   // "coverageThreshold": {
   //   "global": {
   //     "branches": 100,
