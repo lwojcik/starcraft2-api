@@ -57,7 +57,7 @@ npm run build
 | [queryLegacyLadder](http://starcraft2-api.lukem.net/docs/methods/queryLegacyLadder)	| Returns data about an individual SC2 ladder.	|
 | [queryLegacyAchievements](http://starcraft2-api.lukem.net/docs/methods/queryLegacyAchievements)	| Returns data about the achievements available in SC2.	|
 | [queryLegacyRewards](http://starcraft2-api.lukem.net/docs/methods/queryLegacyRewards)	| Returns data about the rewards available in SC2.	|
-| [getLeagueData](http://starcraft2-api.lukem.net/docs/methods/getLeagueData)	| Returns data for the specified season, queue, team, and league.	|
+| [queryLeagueData](http://starcraft2-api.lukem.net/docs/methods/queryLeagueData)	| Returns data for the specified season, queue, team, and league.	|
 
 ## Documentation & examples
 

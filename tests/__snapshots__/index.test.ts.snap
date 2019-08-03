@@ -14,6 +14,13 @@ Object {
 }
 `;
 
+exports[`StarCraft2API queryLeagueData should match snapshot 1`] = `
+Object {
+  "data": "sample_starcraft2api_data",
+  "endpoint": "/data/sc2/league/22/201/0/1",
+}
+`;
+
 exports[`StarCraft2API queryLegacyAchievements should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",

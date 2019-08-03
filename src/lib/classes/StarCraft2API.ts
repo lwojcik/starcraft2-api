@@ -7,6 +7,13 @@ import blizzapi, {
 
 export interface StarCraft2APIOptions extends BlizzAPIOptions {}
 
+export interface League {
+  seasonId: number | string,
+  queueId: number | string,
+  teamType: number | string,
+  leagueId: number | string,
+}
+
 export interface PlayerObject {
   regionId: RegionIdAsNumberOrString;
   realmId: Sc2Realm;
@@ -54,6 +61,11 @@ export default class StarCraft2API extends blizzapi {
 
   queryGrandmasterLeaderboard(regionId: RegionIdAsNumberOrString): Promise<object> {
     return this.query(`/sc2/ladder/grandmaster/${regionId}`);
+  }
+
+  queryLeagueData(league: League): Promise<object> {
+    const { seasonId, queueId, teamType, leagueId } = league;
+    return this.query(`/data/sc2/league/${seasonId}/${queueId}/${teamType}/${leagueId}`);
   }
 
   querySeason(regionId: RegionIdAsNumberOrString): Promise<object> {
