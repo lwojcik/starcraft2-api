@@ -19,7 +19,12 @@ describe('StarCraft2API', () => {
   const ladderId = '123';
   const accountId = '123';
 
-
+  const league = {
+    seasonId: 22,
+    queueId: 201,
+    teamType: 0,
+    leagueId: 1,
+  }
 
   test('should be a class', () => {
     expect(StarCraft2API).toBeDefined();
@@ -86,6 +91,15 @@ describe('StarCraft2API', () => {
 
   test('querySeason should match snapshot', async () => {
     const data = await sc2api.querySeason(regionId);
+    expect(data).toMatchSnapshot();
+  });
+
+  test('should expose queryLeagueData method', () => {
+    expect(sc2api.queryLeagueData).toBeDefined();
+  });
+
+  test('queryLeagueData should match snapshot', async () => {
+    const data = await sc2api.queryLeagueData(league);
     expect(data).toMatchSnapshot();
   });
 
