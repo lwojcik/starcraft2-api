@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/lukemnet/starcraft2-api-docs/master/docs/.vuepress/public/logo.png" alt="StarCraft2-API logo" width="200" height="200">
+
 # StarCraft2-API
 
 [![Travis CI Build Status](https://travis-ci.org/lukemnet/StarCraft2-API.svg?branch=master)](https://travis-ci.org/lukemnet/StarCraft2-API)
