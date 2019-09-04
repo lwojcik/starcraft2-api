@@ -26,6 +26,19 @@ describe('StarCraft2API', () => {
     leagueId: 1,
   }
 
+  const nonExistentProfileUrlLocales = [
+    'ee-ee',
+    'EV-VB',
+    'Po-rR',
+  ];
+
+  const wrongProfileUrlLocales = [
+    'e0-e0',
+    '09rt',
+    '00',
+    'loremipsum',
+  ];
+
   test('should be a class', () => {
     expect(StarCraft2API).toBeDefined();
   });
@@ -157,12 +170,53 @@ describe('StarCraft2API', () => {
     expect(data).toMatchSnapshot();
   });
 
-  test('should expose queryLegacyRewards method', () => {
-    expect(sc2api.queryLegacyRewards).toBeDefined();
-  });
-
   test('queryLegacyRewards should match snapshot', async () => {
     const data = await sc2api.queryLegacyRewards(regionId);
     expect(data).toMatchSnapshot();
   });
+
+  test('should expose getAllProfileUrlLocales method', () => {
+    expect(StarCraft2API.getAllProfileUrlLocales).toBeDefined();
+  });
+
+  test('getAllProfileUrlLocales should match snapshot', async () => {
+    const data = StarCraft2API.getAllProfileUrlLocales();
+    expect(data).toMatchSnapshot();
+  });
+
+  test('should expose checkIfProfileUrlLocaleLooksValid method', () => {
+    expect(StarCraft2API.checkIfProfileUrlLocaleLooksValid).toBeDefined();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters', async () => {
+    const profileUrlLocales = StarCraft2API.getAllProfileUrlLocales();
+    expect(profileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for non-existent locales as parameters', async () => {
+    expect(nonExistentProfileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales as parameters', async () => {
+    expect(wrongProfileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('should expose validateProfileUrlLocale method', () => {
+    expect(StarCraft2API.validateProfileUrlLocale).toBeDefined();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters', async () => {
+    const profileUrlLocales = StarCraft2API.getAllProfileUrlLocales();
+    expect(profileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
+  });
+
+
+  test('validateProfileUrlLocale should match snapshot for non-existent locales as parameters', async () => {
+    expect(nonExistentProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
+  });
+
+  test('validateProfileUrlLocale should throw RangeError for malformed locales as parameters', async () => {
+    expect(() => wrongProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toThrow(RangeError);
+  });
+
 });

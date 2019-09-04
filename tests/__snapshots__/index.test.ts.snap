@@ -1,5 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters 1`] = `
+Array [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+]
+`;
+
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters 2`] = `
+Array [
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+]
+`;
+
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales as parameters 1`] = `
+Array [
+  false,
+  false,
+  false,
+  false,
+]
+`;
+
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for non-existent locales as parameters 1`] = `
+Array [
+  true,
+  true,
+  true,
+]
+`;
+
+exports[`StarCraft2API getAllProfileUrlLocales should match snapshot 1`] = `
+Array [
+  "en-us",
+  "es-mx",
+  "pt-br",
+  "de-de",
+  "en-gb",
+  "es-es",
+  "fr-fr",
+  "it-it",
+  "pl-pl",
+  "ru-ru",
+]
+`;
+
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
@@ -103,4 +165,12 @@ Object {
   "data": "sample_starcraft2api_data",
   "endpoint": "/sc2/static/profile/1?locale=en_US",
 }
+`;
+
+exports[`StarCraft2API validateProfileUrlLocale should match snapshot for non-existent locales as parameters 1`] = `
+Array [
+  false,
+  false,
+  false,
+]
 `;

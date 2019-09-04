@@ -5,6 +5,8 @@ import blizzapi, {
   Sc2Realm
 } from 'blizzapi';
 
+import * as helpers from '../helpers';
+
 export interface StarCraft2APIOptions extends BlizzAPIOptions {}
 
 export interface League {
@@ -105,4 +107,8 @@ export default class StarCraft2API extends blizzapi {
   queryLegacyRewards(regionId: RegionIdAsNumberOrString): Promise<object> {
     return this.query(`/sc2/legacy/data/rewards/${regionId}`);
   }
+
+  static getAllProfileUrlLocales = helpers.getAllProfileUrlLocales;
+  static checkIfProfileUrlLocaleLooksValid = helpers.checkIfProfileUrlLocaleLooksValid;
+  static validateProfileUrlLocale = helpers.validateProfileUrlLocale;
 }
