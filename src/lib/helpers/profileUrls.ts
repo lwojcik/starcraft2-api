@@ -20,38 +20,41 @@ export const validateProfileId = (profileId: number | string) =>
 
 export const unpackProfileUrl = (url: string, includeLocale?: boolean) => {
   const urlIsValid = validateProfileUrl(url);
+
+  if (!urlIsValid) return {};
+
   const profileUrl = url.match(profileUrlRegex)![0];
-  const profileDataArray = profileUrlRegex.exec(profileUrl);
+  const profileDataArray = profileUrlRegex.exec(profileUrl)!;
 
   // tslint:disable-next-line: no-object-mutation
   profileUrlRegex.lastIndex = 0;
 
-  if (urlIsValid && profileDataArray) {
+  const playerObject = {
+    regionId: profileDataArray[1],
+    realmId: profileDataArray[2],
+    profileId: profileDataArray[3],
+  };
 
-    const playerObject = {
-      regionId: profileDataArray[1],
-      realmId: profileDataArray[2],
-      profileId: profileDataArray[3],
-    };
-
-    return includeLocale
-      ? {
-        locale: profileDataArray[0],
-        ...playerObject,
-      }
-      : playerObject;
-  }
-  return {};
+  return includeLocale
+    ? {
+      locale: profileDataArray[0],
+      ...playerObject,
+    }
+    : playerObject;
 }
 
-export const constructProfileUrl = ({ regionId, realmId, profileId }: PlayerProfile, localeName?: string | Boolean) => {
-  const validRegionId = BlizzAPI.validateRegionId(regionId);
-  const validProfileId = validateProfileId(profileId);
-  const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
-
-  if (validRegionId && validRealmId && validProfileId) {
-    const locale = localeName || 'en-us';
-    return `https://starcraft2.com/${typeof locale ==='boolean' && !locale ? '' : `${locale}/`}profile/${regionId}/${realmId}/${profileId}`;
+export const constructProfileUrl = ({ regionId, realmId, profileId }: PlayerProfile, localeName?: string) => {
+  try {
+    const validRegionId = BlizzAPI.validateRegionId(regionId);
+    const validProfileId = validateProfileId(profileId);
+    const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
+  
+    if (validRegionId && validRealmId && validProfileId) {
+      const locale = localeName || 'en-us';
+      return `https://starcraft2.com/${locale}/profile/${regionId}/${realmId}/${profileId}`;
+    }
+    return '';
+  } catch (error) {
+    return '';
   }
-  return '';
 }

@@ -47,6 +47,42 @@ Array [
 ]
 `;
 
+exports[`StarCraft2API constructProfileUrl should match snapshot for invalid player objects 1`] = `
+Array [
+  "",
+  "",
+  "",
+]
+`;
+
+exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects 1`] = `
+Array [
+  "https://starcraft2.com/en-us/profile/1/1/123456",
+  "https://starcraft2.com/en-us/profile/2/2/987654",
+]
+`;
+
+exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects and locale set to false 1`] = `
+Array [
+  "https://starcraft2.com/en-us/profile/1/1/123456",
+  "https://starcraft2.com/en-us/profile/2/2/987654",
+]
+`;
+
+exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects and locale set to true 1`] = `
+Array [
+  "https://starcraft2.com/true/profile/1/1/123456",
+  "https://starcraft2.com/true/profile/2/2/987654",
+]
+`;
+
+exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects and locale set to us-us 1`] = `
+Array [
+  "https://starcraft2.com/us-us/profile/1/1/123456",
+  "https://starcraft2.com/us-us/profile/2/2/987654",
+]
+`;
+
 exports[`StarCraft2API getAllProfileUrlLocales should match snapshot 1`] = `
 Array [
   "en-us",
@@ -165,6 +201,57 @@ Object {
   "data": "sample_starcraft2api_data",
   "endpoint": "/sc2/static/profile/1?locale=en_US",
 }
+`;
+
+exports[`StarCraft2API unpackProfileUrl should match snapshot for invalid urls 1`] = `
+Array [
+  Object {},
+  Object {},
+  Object {},
+]
+`;
+
+exports[`StarCraft2API unpackProfileUrl should match snapshot for valid urls 1`] = `
+Array [
+  Object {
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "en-us",
+  },
+  Object {
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "pl-pl",
+  },
+  Object {
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "ru-ru",
+  },
+]
+`;
+
+exports[`StarCraft2API unpackProfileUrl should match snapshot for valid urls and includeLocale set to true 1`] = `
+Array [
+  Object {
+    "locale": "starcraft2.com/en-us/profile/1/1/1084304",
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "en-us",
+  },
+  Object {
+    "locale": "starcraft2.com/pl-pl/profile/1/1/1084304",
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "pl-pl",
+  },
+  Object {
+    "locale": "starcraft2.com/ru-ru/profile/1/1/1084304",
+    "profileId": "1",
+    "realmId": "1",
+    "regionId": "ru-ru",
+  },
+]
 `;
 
 exports[`StarCraft2API validateProfileId should match snapshot for invalid profile ids 1`] = `
