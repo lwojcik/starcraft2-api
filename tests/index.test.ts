@@ -26,13 +26,13 @@ describe('StarCraft2API', () => {
     leagueId: 1,
   }
 
-  const nonExistentProfileUrlLocales = [
+  const nonExistentProfileUrlLocales: ReadonlyArray<string> = [
     'ee-ee',
     'EV-VB',
     'Po-rR',
   ];
 
-  const wrongProfileUrlLocales = [
+  const wrongProfileUrlLocales: ReadonlyArray<string> = [
     'e0-e0',
     '09rt',
     '00',
@@ -210,7 +210,6 @@ describe('StarCraft2API', () => {
     expect(profileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
   });
 
-
   test('validateProfileUrlLocale should match snapshot for non-existent locales as parameters', async () => {
     expect(nonExistentProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
   });
@@ -219,4 +218,23 @@ describe('StarCraft2API', () => {
     expect(() => wrongProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toThrow(RangeError);
   });
 
+  test('should expose validateProfileUrlLocale method', () => {
+    expect(StarCraft2API.validateProfileUrlLocale).toBeDefined();
+  });
+
+  test('should expose validateProfileUrl method', () => {
+    expect(StarCraft2API.validateProfileUrl).toBeDefined();
+  });
+
+  test('should expose validateProfileId method', () => {
+    expect(StarCraft2API.validateProfileId).toBeDefined();
+  });
+
+  test('should expose unpackProfileUrl method', () => {
+    expect(StarCraft2API.unpackProfileUrl).toBeDefined();
+  });
+
+  test('should expose constructProfileUrl method', () => {
+    expect(StarCraft2API.constructProfileUrl).toBeDefined();
+  });
 });
