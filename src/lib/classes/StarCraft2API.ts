@@ -111,4 +111,7 @@ export default class StarCraft2API extends blizzapi {
   static getAllProfileUrlLocales = helpers.getAllProfileUrlLocales;
   static checkIfProfileUrlLocaleLooksValid = helpers.checkIfProfileUrlLocaleLooksValid;
   static validateProfileUrlLocale = helpers.validateProfileUrlLocale;
+  static validateProfileUrl = helpers.validateProfileUrl;
+  static validateProfileId = helpers.validateProfileId;
+  static unpackProfileUrl = helpers.unpackProfileUrl;
 }
