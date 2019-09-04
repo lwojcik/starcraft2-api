@@ -325,14 +325,6 @@ describe('StarCraft2API', () => {
     expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject))).toMatchSnapshot();
   });
 
-  test('constructProfileUrl should match snapshot for valid player objects and locale set to true', () => {
-    expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject, true))).toMatchSnapshot();
-  });
-
-  test('constructProfileUrl should match snapshot for valid player objects and locale set to false', () => {
-    expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject, false))).toMatchSnapshot();
-  });
-
   test('constructProfileUrl should match snapshot for valid player objects and locale set to us-us', () => {
     expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject, 'us-us'))).toMatchSnapshot();
   });

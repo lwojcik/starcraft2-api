@@ -49,7 +49,7 @@
     "tslint-eslint-rules": "5.4.0",
     "tslint-immutable": "6.0.1",
     "tslint-plugin-prettier": "2.0.1",
-    "typescript": "3.5.3"
+    "typescript": "3.6.2"
   },
   "keywords": [
     "starcraft",
