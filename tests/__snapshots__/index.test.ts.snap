@@ -167,6 +167,38 @@ Object {
 }
 `;
 
+exports[`StarCraft2API validateProfileId should match snapshot for invalid profile ids 1`] = `
+Array [
+  false,
+  false,
+  false,
+]
+`;
+
+exports[`StarCraft2API validateProfileId should match snapshot for valid profile ids 1`] = `
+Array [
+  true,
+  true,
+  true,
+]
+`;
+
+exports[`StarCraft2API validateProfileUrl should match snapshot for invalid urls 1`] = `
+Array [
+  false,
+  false,
+  false,
+]
+`;
+
+exports[`StarCraft2API validateProfileUrl should match snapshot for valid urls 1`] = `
+Array [
+  true,
+  false,
+  true,
+]
+`;
+
 exports[`StarCraft2API validateProfileUrlLocale should match snapshot for non-existent locales as parameters 1`] = `
 Array [
   false,

@@ -19,6 +19,31 @@ describe('StarCraft2API', () => {
   const ladderId = '123';
   const accountId = '123';
 
+  const validProfileUrls: ReadonlyArray<string> = [
+    'https://starcraft2.com/en-us/profile/1/1/1084304',
+    '//starcraft2.com/pl-pl/profile/1/1/1084304',
+    'starcraft2.com/ru-ru/profile/1/1/1084304',
+  ];
+
+  const invalidProfileUrls: ReadonlyArray<string> = [
+    'starcraft2.com',
+    'loremipsum',
+    '000test',
+  ];
+
+  const validProfileIds: ReadonlyArray<string> = [
+    '123456',
+    '78901',
+    '2323242',
+  ];
+
+
+  const invalidProfileIds: ReadonlyArray<string> = [
+    'aaaa',
+    '7fdssd8901',
+    '2323test242',
+  ];
+
   const league = {
     seasonId: 22,
     queueId: 201,
@@ -226,10 +251,25 @@ describe('StarCraft2API', () => {
     expect(StarCraft2API.validateProfileUrl).toBeDefined();
   });
 
+  test('validateProfileUrl should match snapshot for valid urls', () => {
+    expect(validProfileUrls.map(url => StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  });
+
+  test('validateProfileUrl should match snapshot for invalid urls', () => {
+    expect(invalidProfileUrls.map(url => StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  });
+
   test('should expose validateProfileId method', () => {
     expect(StarCraft2API.validateProfileId).toBeDefined();
   });
 
+  test('validateProfileId should match snapshot for valid profile ids', () => {
+    expect(validProfileIds.map(profileId => StarCraft2API.validateProfileId(profileId))).toMatchSnapshot();
+  });
+
+  test('validateProfileId should match snapshot for invalid profile ids', () => {
+    expect(invalidProfileIds.map(profileId => StarCraft2API.validateProfileId(profileId))).toMatchSnapshot();
+  });
   test('should expose unpackProfileUrl method', () => {
     expect(StarCraft2API.unpackProfileUrl).toBeDefined();
   });
