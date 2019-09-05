@@ -1,6 +1,6 @@
 {
   "name": "starcraft2-api",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "Flexible and feature-rich library for StarCraft II Community and Game Data APIs",
   "homepage": "https://starcraft2-api.lukem.net",
   "main": "./dist/index.js",
