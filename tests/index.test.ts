@@ -1,4 +1,5 @@
 import StarCraft2API from '../src/index';
+import { PlayerProfile } from '../src/lib/helpers/profileUrls';
 
 describe('StarCraft2API', () => {
   const sc2api = new StarCraft2API({ region: 'us', clientId: 'sample_client_id', clientSecret: 'sample_client_secret' });
@@ -19,12 +20,78 @@ describe('StarCraft2API', () => {
   const ladderId = '123';
   const accountId = '123';
 
+  const validProfileUrls: ReadonlyArray<string> = [
+    'https://starcraft2.com/en-us/profile/1/1/1084304',
+    '//starcraft2.com/pl-pl/profile/1/1/1084304',
+    'starcraft2.com/ru-ru/profile/1/1/1084304',
+  ];
+
+  const playerObjects: ReadonlyArray<PlayerProfile> = [
+    {
+      regionId: 1,
+      realmId: 1,
+      profileId: 123456,
+    },
+    {
+      regionId: 2,
+      realmId: 2,
+      profileId: 987654,
+    },
+  ];
+
+  const invalidPlayerObjects: ReadonlyArray<any> = [
+    {
+      realmId: '',
+      profileId: '',
+    },
+    {
+      regionId: '',
+      profileId: '',
+    },
+    {
+      regionId: '',
+      realmId: '',
+    },
+  ];
+
+  const invalidProfileUrls: ReadonlyArray<string> = [
+    'starcraft2.com',
+    'loremipsum',
+    '000test',
+  ];
+
+  const validProfileIds: ReadonlyArray<string> = [
+    '123456',
+    '78901',
+    '2323242',
+  ];
+
+
+  const invalidProfileIds: ReadonlyArray<string> = [
+    'aaaa',
+    '7fdssd8901',
+    '2323test242',
+  ];
+
   const league = {
     seasonId: 22,
     queueId: 201,
     teamType: 0,
     leagueId: 1,
   }
+
+  const nonExistentProfileUrlLocales: ReadonlyArray<string> = [
+    'ee-ee',
+    'EV-VB',
+    'Po-rR',
+  ];
+
+  const wrongProfileUrlLocales: ReadonlyArray<string> = [
+    'e0-e0',
+    '09rt',
+    '00',
+    'loremipsum',
+  ];
 
   test('should be a class', () => {
     expect(StarCraft2API).toBeDefined();
@@ -157,12 +224,113 @@ describe('StarCraft2API', () => {
     expect(data).toMatchSnapshot();
   });
 
-  test('should expose queryLegacyRewards method', () => {
-    expect(sc2api.queryLegacyRewards).toBeDefined();
-  });
-
   test('queryLegacyRewards should match snapshot', async () => {
     const data = await sc2api.queryLegacyRewards(regionId);
     expect(data).toMatchSnapshot();
   });
+
+  test('should expose getAllProfileUrlLocales method', () => {
+    expect(StarCraft2API.getAllProfileUrlLocales).toBeDefined();
+  });
+
+  test('getAllProfileUrlLocales should match snapshot', async () => {
+    const data = StarCraft2API.getAllProfileUrlLocales();
+    expect(data).toMatchSnapshot();
+  });
+
+  test('should expose checkIfProfileUrlLocaleLooksValid method', () => {
+    expect(StarCraft2API.checkIfProfileUrlLocaleLooksValid).toBeDefined();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters', async () => {
+    const profileUrlLocales = StarCraft2API.getAllProfileUrlLocales();
+    expect(profileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for non-existent locales as parameters', async () => {
+    expect(nonExistentProfileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales as parameters', async () => {
+    expect(wrongProfileUrlLocales.map((locale) => StarCraft2API.checkIfProfileUrlLocaleLooksValid(locale))).toMatchSnapshot();
+  });
+
+  test('should expose validateProfileUrlLocale method', () => {
+    expect(StarCraft2API.validateProfileUrlLocale).toBeDefined();
+  });
+
+  test('checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters', async () => {
+    const profileUrlLocales = StarCraft2API.getAllProfileUrlLocales();
+    expect(profileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
+  });
+
+  test('validateProfileUrlLocale should match snapshot for non-existent locales as parameters', async () => {
+    expect(nonExistentProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toMatchSnapshot();
+  });
+
+  test('validateProfileUrlLocale should throw RangeError for malformed locales as parameters', async () => {
+    expect(() => wrongProfileUrlLocales.map((locale) => StarCraft2API.validateProfileUrlLocale(locale))).toThrow(RangeError);
+  });
+
+  test('should expose validateProfileUrlLocale method', () => {
+    expect(StarCraft2API.validateProfileUrlLocale).toBeDefined();
+  });
+
+  test('should expose validateProfileUrl method', () => {
+    expect(StarCraft2API.validateProfileUrl).toBeDefined();
+  });
+
+  test('validateProfileUrl should match snapshot for valid urls', () => {
+    expect(validProfileUrls.map(url => StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  });
+
+  test('validateProfileUrl should match snapshot for invalid urls', () => {
+    expect(invalidProfileUrls.map(url => StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  });
+
+  test('should expose validateProfileId method', () => {
+    expect(StarCraft2API.validateProfileId).toBeDefined();
+  });
+
+  test('validateProfileId should match snapshot for valid profile ids', () => {
+    expect(validProfileIds.map(profileId => StarCraft2API.validateProfileId(profileId))).toMatchSnapshot();
+  });
+
+  test('validateProfileId should match snapshot for invalid profile ids', () => {
+    expect(invalidProfileIds.map(profileId => StarCraft2API.validateProfileId(profileId))).toMatchSnapshot();
+  });
+
+  test('should expose unpackProfileUrl method', () => {
+    expect(StarCraft2API.unpackProfileUrl).toBeDefined();
+  });
+
+  test('unpackProfileUrl should match snapshot for valid urls', () => {
+    expect(validProfileUrls.map(url => StarCraft2API.unpackProfileUrl(url))).toMatchSnapshot();
+  });
+
+  test('unpackProfileUrl should match snapshot for valid urls and includeLocale set to true', () => {
+    expect(validProfileUrls.map(url => StarCraft2API.unpackProfileUrl(url, true))).toMatchSnapshot();
+  });
+
+
+  test('unpackProfileUrl should match snapshot for invalid urls', () => {
+    expect(invalidProfileUrls.map(url => StarCraft2API.unpackProfileUrl(url))).toMatchSnapshot();
+  });
+
+  test('should expose constructProfileUrl method', () => {
+    expect(StarCraft2API.constructProfileUrl).toBeDefined();
+  });
+
+  test('constructProfileUrl should match snapshot for valid player objects', () => {
+    expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject))).toMatchSnapshot();
+  });
+
+  test('constructProfileUrl should match snapshot for valid player objects and locale set to us-us', () => {
+    expect(playerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject, 'us-us'))).toMatchSnapshot();
+  });
+
+  test('constructProfileUrl should match snapshot for invalid player objects', () => {
+    expect(invalidPlayerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject))).toMatchSnapshot();
+  });
+
 });
