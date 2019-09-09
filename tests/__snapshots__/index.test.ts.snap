@@ -62,10 +62,10 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects and locale set to us-us 1`] = `
+exports[`StarCraft2API constructProfileUrl should match snapshot for valid player objects and locale set to en-us 1`] = `
 Array [
-  "https://starcraft2.com/us-us/profile/1/1/123456",
-  "https://starcraft2.com/us-us/profile/2/2/987654",
+  "https://starcraft2.com/en-us/profile/1/1/123456",
+  "https://starcraft2.com/en-us/profile/2/2/987654",
 ]
 `;
 
