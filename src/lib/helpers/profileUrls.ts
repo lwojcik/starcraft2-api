@@ -3,6 +3,8 @@ import BlizzAPI, {
   Sc2RealmAsNumberOrString,
 } from 'blizzapi';
 
+import { validateProfileUrlLocale } from './profileUrlLocales';
+
 export interface PlayerProfile {
   regionId: RegionIdAsNumberOrString,
   realmId: Sc2RealmAsNumberOrString,
@@ -48,10 +50,12 @@ export const constructProfileUrl = ({ regionId, realmId, profileId }: PlayerProf
     const validRegionId = BlizzAPI.validateRegionId(regionId);
     const validProfileId = validateProfileId(profileId);
     const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
-  
+    const validLocaleName = localeName && validateProfileUrlLocale(localeName)
+      ? localeName
+      : 'en-us';
+
     if (validRegionId && validRealmId && validProfileId) {
-      const locale = localeName || 'en-us';
-      return `https://starcraft2.com/${locale}/profile/${regionId}/${realmId}/${profileId}`;
+      return `https://starcraft2.com/${validLocaleName}/profile/${regionId}/${realmId}/${profileId}`;
     }
     return '';
   } catch (error) {
