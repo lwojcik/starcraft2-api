@@ -25,13 +25,13 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
     "dist",
     "**/tests/*.test.ts",
     "tests",
-    "setupJest.ts",
+    "setupJest.ts"
   ]
 }
