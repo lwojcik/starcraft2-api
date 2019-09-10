@@ -3,8 +3,7 @@
     "extends": [
         "tslint-config-airbnb",
         "tslint-config-prettier",
-        "tslint-plugin-prettier",
-        "tslint-immutable/all"
+        "tslint-plugin-prettier"
     ],
     "jsRules": {},
     "rules": {
@@ -13,14 +12,14 @@
         "typedef": [true, "call-signature"],
         "no-unnecessary-class": false,
         "no-this": false,
-        "no-mixed-interface": true,
         "no-expression-statement": false,
         "no-if-statement": false,
         "no-class": false,
         "readonly-keyword": false,
         "no-throw": false,
         "no-try": false,
-        "import-name": false
+        "import-name": false,
+        "no-console": true
     },
     "rulesDirectory": [
         "node_modules/tslint-eslint-rules/dist/rules"

@@ -21,6 +21,7 @@ export interface PlayerObject {
   realmId: Sc2Realm;
   profileId: number | string;
 }
+
 export default class StarCraft2API extends blizzapi {
   constructor(options: StarCraft2APIOptions) {
     super(options);
