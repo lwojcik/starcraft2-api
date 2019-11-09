@@ -84,6 +84,8 @@ Array [
 ]
 `;
 
+exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(\\[0-9\\]\\{1\\}\\)\\\\/\\(\\[0-9\\]\\*\\)/gi`;
+
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
   "data": "sample_starcraft2api_data",
