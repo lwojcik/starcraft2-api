@@ -333,4 +333,11 @@ describe('StarCraft2API', () => {
     expect(invalidPlayerObjects.map((playerObject) => StarCraft2API.constructProfileUrl(playerObject))).toMatchSnapshot();
   });
 
+  test('should expose profileUrlRegex method', () => {
+    expect(StarCraft2API.profileUrlRegex).toBeDefined();
+  });
+
+  test('profileUrlRegex should match snapshot', () => {
+    expect(StarCraft2API.profileUrlRegex()).toMatchSnapshot();
+  });
 });
