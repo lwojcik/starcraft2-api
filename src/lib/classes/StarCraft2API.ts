@@ -20,6 +20,7 @@ export interface PlayerObject {
   regionId: RegionIdAsNumberOrString;
   realmId: Sc2Realm;
   profileId: number | string;
+  locale?: string;
 }
 
 export default class StarCraft2API extends blizzapi {
@@ -116,4 +117,5 @@ export default class StarCraft2API extends blizzapi {
   static validateProfileId = helpers.validateProfileId;
   static unpackProfileUrl = helpers.unpackProfileUrl;
   static constructProfileUrl = helpers.constructProfileUrl;
+  static profileUrlRegex = () => helpers.profileUrlRegex;
 }
