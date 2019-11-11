@@ -13,7 +13,7 @@ export interface PlayerProfile {
 }
 
 export const profileUrlRegex: RegExp =
-  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/([0-9]{1})\/([0-9]*)/gi;
+  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/([0-9]{1})\/([0-9]*)/;
 
 export const validateProfileUrl = (url: string) =>
   profileUrlRegex.test(url);
