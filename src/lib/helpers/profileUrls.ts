@@ -9,10 +9,11 @@ export interface PlayerProfile {
   regionId: RegionIdAsNumberOrString,
   realmId: Sc2RealmAsNumberOrString,
   profileId: string | number,
+  locale?: string,
 }
 
-const profileUrlRegex: RegExp =
-  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/([0-9]{1})\/([0-9]*)/gi;
+export const profileUrlRegex =
+  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/([0-9]{1})\/([0-9]*)/i;
 
 export const validateProfileUrl = (url: string) =>
   profileUrlRegex.test(url);
@@ -20,7 +21,7 @@ export const validateProfileUrl = (url: string) =>
 export const validateProfileId = (profileId: number | string) => 
   profileId.toString() === parseInt(profileId as string, 10).toString();
 
-export const unpackProfileUrl = (url: string, includeLocale?: boolean) => {
+export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerProfile | {} => {
   const urlIsValid = validateProfileUrl(url);
 
   if (!urlIsValid) return {};
