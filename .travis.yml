@@ -9,7 +9,7 @@ os:
   - osx
   - windows
 
-matrix:
+jobs:
   allow_failures:
     - os: windows
 
