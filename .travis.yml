@@ -9,6 +9,8 @@ os:
   - osx
   - windows
 
+dist: bionic
+
 jobs:
   allow_failures:
     - os: windows
