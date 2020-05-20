@@ -18,17 +18,19 @@ export const getAllProfileUrlLocales = () => constants.PROFILE_URL_LOCALES;
 export const checkIfProfileUrlLocaleLooksValid = (profileUrlLocale: ProfileUrlLocale) => {
   const profileUrlLocaleRegex = /^(?:[a-z]{2}-[a-z]{2})$/gi;
   const doesProfileUrlLocaleLookValid = profileUrlLocaleRegex.test(profileUrlLocale);
-  
+
   // tslint:disable-next-line: no-object-mutation
   profileUrlLocaleRegex.lastIndex = 0;
   return doesProfileUrlLocaleLookValid;
 };
 
 /**
- * Validates locale profile URL locale against profile URL locale list (whether it exists in the constants object)
+ * Validates locale profile URL locale against profile URL locale list
+ * (whether it exists in the constants object)
  *
  * @param locale Locale name
- * @return true if profile URL locale exists, false if not. Throws RangeError if profile URL locale doesn't match regex pattern
+ * @return true if profile URL locale exists, false if not.
+ * Throws RangeError if profile URL locale doesn't match regex pattern
  */
 export const validateProfileUrlLocale = (profileUrlLocale: ProfileUrlLocale) => {
   const isProfileUrlLocaleValid = checkIfProfileUrlLocaleLooksValid(profileUrlLocale);

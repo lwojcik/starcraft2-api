@@ -2,13 +2,13 @@
 
 # StarCraft2-API
 
-[![Travis CI Build Status](https://travis-ci.org/lukemnet/StarCraft2-API.svg?branch=master)](https://travis-ci.org/lukemnet/StarCraft2-API)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/37k5l8yafs1ucthh?svg=true)](https://ci.appveyor.com/project/lwojcik/starcraft2-api)
+[![npm (latest)](https://img.shields.io/npm/v/starcraft2-api/latest.svg)](https://www.npmjs.com/package/starcraft2-api)
+[![Travis CI Build Status](https://travis-ci.org/lukemnet/starcraft2-api.svg?branch=master)](https://travis-ci.org/lukemnet/starcraft2-api)
 [![Maintainability](https://api.codeclimate.com/v1/badges/77186f38dbab09a28a6d/maintainability)](https://codeclimate.com/github/lukemnet/starcraft2-api/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/77186f38dbab09a28a6d/test_coverage)](https://codeclimate.com/github/lukemnet/starcraft2-api/test_coverage)
 
 
-Feature-rich library for easy access to [StarCraft II Community APIs](https://develop.battle.net/documentation/api-reference/starcraft-2-community-api) and [StarCraft II Game Data APIs](https://develop.battle.net/documentation/api-reference/starcraft-2-game-data-api) powered by [BlizzAPI](https://github.com/lukemnet/blizzapi).
+Feature-rich library for easy access to [StarCraft II Community APIs](https://develop.battle.net/documentation/starcraft-2/community-apis) and [StarCraft II Game Data APIs](https://develop.battle.net/documentation/starcraft-2/game-data-apis) powered by [BlizzAPI](https://github.com/lukemnet/blizzapi).
 
 
 ## Install
