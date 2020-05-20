@@ -2,7 +2,7 @@ import blizzapi, {
   BlizzAPIOptions,
   RegionIdAsNumberOrString,
   Locale,
-  Sc2Realm
+  Sc2Realm,
 } from 'blizzapi';
 
 import * as helpers from '../helpers';
@@ -10,10 +10,10 @@ import * as helpers from '../helpers';
 export interface StarCraft2APIOptions extends BlizzAPIOptions {}
 
 export interface League {
-  seasonId: number | string,
-  queueId: number | string,
-  teamType: number | string,
-  leagueId: number | string,
+  seasonId: number | string;
+  queueId: number | string;
+  teamType: number | string;
+  leagueId: number | string;
 }
 
 export interface PlayerObject {
@@ -55,7 +55,11 @@ export default class StarCraft2API extends blizzapi {
     );
   }
 
-  queryPlayerLadder(playerObject: PlayerObject, ladderId: number | string, locale?: Locale): Promise<object> {
+  queryPlayerLadder(
+    playerObject: PlayerObject,
+    ladderId: number | string,
+    locale?: Locale,
+  ): Promise<object> {
     const { regionId, realmId, profileId } = playerObject;
     const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
     return this.query(

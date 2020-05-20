@@ -30,7 +30,7 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales as parameters 1`] = `
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales 1`] = `
 Array [
   false,
   false,
@@ -39,7 +39,7 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for non-existent locales as parameters 1`] = `
+exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for non-existent locales 1`] = `
 Array [
   true,
   true,
