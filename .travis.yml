@@ -11,13 +11,12 @@ os:
 
 dist: bionic
 
-jobs:
-  allow_failures:
-    - os: windows
-
 node_js:
-  - 'lts/*'
-  - 'node'
+  - '10'
+  - '11'
+  - '12'
+  - '13'
+  - '14'
 
 install:
   - npm install
