@@ -6,10 +6,10 @@ import BlizzAPI, {
 import { validateProfileUrlLocale } from './profileUrlLocales';
 
 export interface PlayerProfile {
-  regionId: RegionIdAsNumberOrString,
-  realmId: Sc2RealmAsNumberOrString,
-  profileId: string | number,
-  locale?: string,
+  regionId: RegionIdAsNumberOrString;
+  realmId: Sc2RealmAsNumberOrString;
+  profileId: string | number;
+  locale?: string;
 }
 
 export const profileUrlRegex =
@@ -18,7 +18,7 @@ export const profileUrlRegex =
 export const validateProfileUrl = (url: string) =>
   profileUrlRegex.test(url);
 
-export const validateProfileId = (profileId: number | string) => 
+export const validateProfileId = (profileId: number | string) =>
   profileId.toString() === parseInt(profileId as string, 10).toString();
 
 export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerProfile | {} => {
@@ -44,22 +44,28 @@ export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerPr
       ...playerObject,
     }
     : playerObject;
-}
+};
 
-export const constructProfileUrl = ({ regionId, realmId, profileId }: PlayerProfile, localeName?: string) => {
+export const constructProfileUrl = (
+  {
+    regionId,
+    realmId,
+    profileId,
+  }: PlayerProfile,
+  localeName?: string) => {
   try {
     const validRegionId = BlizzAPI.validateRegionId(regionId);
     const validProfileId = validateProfileId(profileId);
     const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
-    const validLocaleName = localeName && validateProfileUrlLocale(localeName)
+    const locale = localeName && validateProfileUrlLocale(localeName)
       ? localeName
       : 'en-us';
 
     if (validRegionId && validRealmId && validProfileId) {
-      return `https://starcraft2.com/${validLocaleName}/profile/${regionId}/${realmId}/${profileId}`;
+      return `https://starcraft2.com/${locale}/profile/${regionId}/${realmId}/${profileId}`;
     }
     return '';
   } catch (error) {
     return '';
   }
-}
+};
