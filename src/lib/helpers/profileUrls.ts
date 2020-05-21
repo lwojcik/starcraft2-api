@@ -57,12 +57,12 @@ export const constructProfileUrl = (
     const validRegionId = BlizzAPI.validateRegionId(regionId);
     const validProfileId = validateProfileId(profileId);
     const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
-    const validLocale = localeName && validateProfileUrlLocale(localeName)
+    const locale = localeName && validateProfileUrlLocale(localeName)
       ? localeName
       : 'en-us';
 
     if (validRegionId && validRealmId && validProfileId) {
-      return `https://starcraft2.com/${validLocale}/profile/${regionId}/${realmId}/${profileId}`;
+      return `https://starcraft2.com/${locale}/profile/${regionId}/${realmId}/${profileId}`;
     }
     return '';
   } catch (error) {
