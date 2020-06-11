@@ -84,7 +84,7 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(\\[0-9\\]\\{1\\}\\)\\\\/\\(\\[0-9\\]\\*\\)/i`;
+exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(\\(1\\|2\\)\\{1\\}\\)\\\\/\\(\\[0-9\\]\\*\\)/i`;
 
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
@@ -202,17 +202,17 @@ Array [
 exports[`StarCraft2API unpackProfileUrl should match snapshot for valid urls 1`] = `
 Array [
   Object {
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
   Object {
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
   Object {
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
@@ -223,19 +223,19 @@ exports[`StarCraft2API unpackProfileUrl should match snapshot for valid urls and
 Array [
   Object {
     "locale": "en-us",
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
   Object {
     "locale": "pl-pl",
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
   Object {
     "locale": "ru-ru",
-    "profileId": "1084304",
+    "profileId": "1",
     "realmId": "1",
     "regionId": "1",
   },
