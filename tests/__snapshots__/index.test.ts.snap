@@ -84,7 +84,7 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(\\(1\\|2\\)\\{1\\}\\)\\\\/\\(\\[0-9\\]\\*\\)/i`;
+exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(1\\|2\\{1\\}\\)\\\\/\\(\\[0-9\\]\\*\\)/i`;
 
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
@@ -229,17 +229,17 @@ Array [
   Object {
     "profileId": "234567890",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "2",
   },
   Object {
     "profileId": "345678901",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "3",
   },
   Object {
     "profileId": "456789012",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "5",
   },
 ]
 `;
@@ -280,19 +280,19 @@ Array [
     "locale": "en-us",
     "profileId": "234567890",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "2",
   },
   Object {
     "locale": "en-us",
     "profileId": "345678901",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "3",
   },
   Object {
     "locale": "en-us",
     "profileId": "456789012",
     "realmId": "1",
-    "regionId": "1",
+    "regionId": "5",
   },
 ]
 `;
