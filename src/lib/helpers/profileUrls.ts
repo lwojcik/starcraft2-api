@@ -13,7 +13,7 @@ export interface PlayerProfile {
 }
 
 export const profileUrlRegex =
-  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/((1|2){1})\/([0-9]*)/i;
+  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/(1|2{1})\/([0-9]*)/i;
 
 export const validateProfileUrl = (url: string) =>
   profileUrlRegex.test(url);
@@ -28,12 +28,11 @@ export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerPr
 
   const profileUrl = url.match(profileUrlRegex)![0];
   const profileDataArray = profileUrlRegex.exec(profileUrl)!;
-  profileUrlRegex.lastIndex = 0;
 
   const playerObject = {
-    regionId: profileDataArray[3],
-    realmId: profileDataArray[4],
-    profileId: profileDataArray[5],
+    regionId: profileDataArray[2],
+    realmId: profileDataArray[3],
+    profileId: profileDataArray[4],
   };
 
   return includeLocale
