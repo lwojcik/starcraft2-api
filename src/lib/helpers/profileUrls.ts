@@ -28,14 +28,12 @@ export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerPr
 
   const profileUrl = url.match(profileUrlRegex)![0];
   const profileDataArray = profileUrlRegex.exec(profileUrl)!;
-
-  // tslint:disable-next-line: no-object-mutation
   profileUrlRegex.lastIndex = 0;
 
   const playerObject = {
-    regionId: profileDataArray[2],
-    realmId: profileDataArray[3],
-    profileId: profileDataArray[4],
+    regionId: profileDataArray[3],
+    realmId: profileDataArray[4],
+    profileId: profileDataArray[5],
   };
 
   return includeLocale
