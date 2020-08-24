@@ -44,23 +44,25 @@ npm run build
 
 ## Available methods
 
+[Full list of methods with usage examples](https://starcraft2-api.lukem.net/docs/methods/) is also available. 
+
 | Method 	| Description 	|
 |-----------------------------------------------------------------------------------	|----------------------------------------------------------------------------------------	|
-| [queryStaticProfileData](http://starcraft2-api.lukem.net/docs/methods/queryStaticProfileData)	| Returns all static SC2 profile data (achievements, categories, criteria, and rewards). 	|
-| [queryProfileMetadata](http://starcraft2-api.lukem.net/docs/methods/queryProfileMetadata)	| Returns metadata for an individual's profile. 	|
-| [queryProfile](http://starcraft2-api.lukem.net/docs/methods/queryProfile)	| Returns data about an individual SC2 profile.	|
-| [queryLadderSummary](http://starcraft2-api.lukem.net/docs/methods/queryLadderSummary)	| Returns a ladder summary for an individual SC2 profile.	|
-| [queryPlayerLadder](http://starcraft2-api.lukem.net/docs/methods/queryPlayerLadder)	| Returns data about an individual profile's ladder.	|
-| [queryGrandmasterLeaderboard](http://starcraft2-api.lukem.net/docs/methods/queryGrandmasterLeaderboard)	| Returns ladder data for the current season's grandmaster leaderboard.	|
-| [querySeason](http://starcraft2-api.lukem.net/docs/methods/querySeason)	| Returns data about the current season.	|
-| [queryPlayerAccount](http://starcraft2-api.lukem.net/docs/methods/queryPlayerAccount)	| Returns metadata for an individual's account.	|
-| [queryLegacyProfile](http://starcraft2-api.lukem.net/docs/methods/queryLegacyProfile)	| Retrieves data about an individual SC2 profile.	|
-| [queryLegacyLadders](http://starcraft2-api.lukem.net/docs/methods/queryLegacyLadders)	| Retrieves data about an individual SC2 profile's ladders.	|
-| [queryLegacyMatchHistory](http://starcraft2-api.lukem.net/docs/methods/queryLegacyMatchHistory)	| Returns data about an individual SC2 profile's match history.	|
-| [queryLegacyLadder](http://starcraft2-api.lukem.net/docs/methods/queryLegacyLadder)	| Returns data about an individual SC2 ladder.	|
-| [queryLegacyAchievements](http://starcraft2-api.lukem.net/docs/methods/queryLegacyAchievements)	| Returns data about the achievements available in SC2.	|
-| [queryLegacyRewards](http://starcraft2-api.lukem.net/docs/methods/queryLegacyRewards)	| Returns data about the rewards available in SC2.	|
-| [queryLeagueData](http://starcraft2-api.lukem.net/docs/methods/queryLeagueData)	| Returns data for the specified season, queue, team, and league.	|
+| [queryStaticProfileData](https://starcraft2-api.lukem.net/docs/methods/queryStaticProfileData)	| Returns all static SC2 profile data (achievements, categories, criteria, and rewards). 	|
+| [queryProfileMetadata](https://starcraft2-api.lukem.net/docs/methods/queryProfileMetadata)	| Returns metadata for an individual's profile. 	|
+| [queryProfile](https://starcraft2-api.lukem.net/docs/methods/queryProfile)	| Returns data about an individual SC2 profile.	|
+| [queryLadderSummary](https://starcraft2-api.lukem.net/docs/methods/queryLadderSummary)	| Returns a ladder summary for an individual SC2 profile.	|
+| [queryPlayerLadder](https://starcraft2-api.lukem.net/docs/methods/queryPlayerLadder)	| Returns data about an individual profile's ladder.	|
+| [queryGrandmasterLeaderboard](https://starcraft2-api.lukem.net/docs/methods/queryGrandmasterLeaderboard)	| Returns ladder data for the current season's grandmaster leaderboard.	|
+| [querySeason](https://starcraft2-api.lukem.net/docs/methods/querySeason)	| Returns data about the current season.	|
+| [queryPlayerAccount](https://starcraft2-api.lukem.net/docs/methods/queryPlayerAccount)	| Returns metadata for an individual's account.	|
+| [queryLegacyProfile](https://starcraft2-api.lukem.net/docs/methods/queryLegacyProfile)	| Retrieves data about an individual SC2 profile.	|
+| [queryLegacyLadders](https://starcraft2-api.lukem.net/docs/methods/queryLegacyLadders)	| Retrieves data about an individual SC2 profile's ladders.	|
+| [queryLegacyMatchHistory](https://starcraft2-api.lukem.net/docs/methods/queryLegacyMatchHistory)	| Returns data about an individual SC2 profile's match history.	|
+| [queryLegacyLadder](https://starcraft2-api.lukem.net/docs/methods/queryLegacyLadder)	| Returns data about an individual SC2 ladder.	|
+| [queryLegacyAchievements](https://starcraft2-api.lukem.net/docs/methods/queryLegacyAchievements)	| Returns data about the achievements available in SC2.	|
+| [queryLegacyRewards](https://starcraft2-api.lukem.net/docs/methods/queryLegacyRewards)	| Returns data about the rewards available in SC2.	|
+| [queryLeagueData](https://starcraft2-api.lukem.net/docs/methods/queryLeagueData)	| Returns data for the specified season, queue, team, and league.	|
 
 ## Documentation & examples
 
