@@ -15,14 +15,14 @@ export interface PlayerProfile {
 export const profileUrlRegex =
   /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/(1|2{1})\/([0-9]*)/i;
 
-export const validateProfileUrl = (url: string) =>
+export const checkIfProfileUrlLooksValid = (url: string) =>
   profileUrlRegex.test(url);
 
 export const validateProfileId = (profileId: number | string) =>
   profileId.toString() === parseInt(profileId as string, 10).toString();
 
 export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerProfile | {} => {
-  const urlIsValid = validateProfileUrl(url);
+  const urlIsValid = checkIfProfileUrlLooksValid(url);
 
   if (!urlIsValid) return {};
 
@@ -41,6 +41,34 @@ export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerPr
       ...playerObject,
     }
     : playerObject;
+};
+
+export const validateProfileUrl = (url: string, includeLocale?: boolean) => {
+  const profileObject = unpackProfileUrl(url, includeLocale) as PlayerProfile;
+
+  if (Object.keys(profileObject).length === 0) {
+    throw new RangeError(`${url} is not a valid argument for validateProfileUrl()`);
+  }
+
+  const {
+    regionId,
+    realmId,
+    profileId,
+  } = profileObject;
+
+  const localeName = includeLocale
+    ? (profileObject as PlayerProfile & { locale: string }).locale
+      : undefined;
+
+  const validRegionId = BlizzAPI.validateRegionId(regionId);
+  const validProfileId = validateProfileId(profileId);
+  const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
+  const validLocale = localeName && validateProfileUrlLocale(localeName);
+
+  return validRegionId
+    && validRealmId
+    && validProfileId
+    && includeLocale ? validLocale : true;
 };
 
 export const constructProfileUrl = (
