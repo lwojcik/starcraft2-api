@@ -311,11 +311,6 @@ describe('StarCraft2API', () => {
       StarCraft2API.validateProfileUrl(url, true))).toMatchSnapshot();
   });
 
-  // test('validateProfileUrl should match snapshot for invalid urls', () => {
-  //   expect(invalidProfileUrls.map(url =>
-  //     StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
-  // });
-
   test(
     'validateProfileUrl should throw RangeError for invalid urls',
     async () => {
