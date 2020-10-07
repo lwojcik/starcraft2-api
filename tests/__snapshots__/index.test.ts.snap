@@ -15,21 +15,6 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for correct parameters 2`] = `
-Array [
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-]
-`;
-
 exports[`StarCraft2API checkIfProfileUrlLocaleLooksValid should match snapshot for malformed locales 1`] = `
 Array [
   false,

@@ -12,8 +12,7 @@ export interface PlayerProfile {
   locale?: string;
 }
 
-export const profileUrlRegex =
-  /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/(1|2{1})\/([0-9]\d*)/i;
+export const profileUrlRegex = /starcraft2\.com\/([A-z]{2}-[A-z]{2})\/profile\/(1|2|3|5{1})\/(1|2{1})\/([0-9]\d*)/i;
 
 export const checkIfProfileUrlLooksValid = (url: string) =>
   profileUrlRegex.test(url);
@@ -52,7 +51,7 @@ export const validateProfileUrl = (url: string, includeLocale?: boolean) => {
 
   const localeName = includeLocale
     ? (profileObject as PlayerProfile & { locale: string }).locale
-      : undefined;
+    : undefined;
 
   const validRegionId = BlizzAPI.validateRegionId(regionId);
   const validProfileId = validateProfileId(profileId);
@@ -71,7 +70,8 @@ export const constructProfileUrl = (
     realmId,
     profileId,
   }: PlayerProfile,
-  localeName?: string) => {
+  localeName?: string,
+) => {
   try {
     const validRegionId = BlizzAPI.validateRegionId(regionId);
     const validProfileId = validateProfileId(profileId);

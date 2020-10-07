@@ -25,10 +25,6 @@ export interface PlayerObject {
 }
 
 export default class StarCraft2API extends blizzapi {
-  constructor(options: StarCraft2APIOptions) {
-    super(options);
-  }
-
   queryStaticProfileData(
     regionId: RegionIdAsNumberOrString,
     locale?: Locale,
@@ -105,7 +101,12 @@ export default class StarCraft2API extends blizzapi {
   }
 
   queryLeagueData(league: League, options?: QueryOptions): Promise<object> {
-    const { seasonId, queueId, teamType, leagueId } = league;
+    const {
+      seasonId,
+      queueId,
+      teamType,
+      leagueId,
+    } = league;
     return this.query(
       `/data/sc2/league/${seasonId}/${queueId}/${teamType}/${leagueId}`,
       options,
@@ -127,7 +128,11 @@ export default class StarCraft2API extends blizzapi {
   }
 
   queryLegacyProfile(playerObject: PlayerObject, options?: QueryOptions): Promise<object> {
-    const { regionId, realmId, profileId } = playerObject;
+    const {
+      regionId,
+      realmId,
+      profileId,
+    } = playerObject;
     return this.query(
       `/sc2/legacy/profile/${regionId}/${realmId}/${profileId}`,
       options,
@@ -135,7 +140,11 @@ export default class StarCraft2API extends blizzapi {
   }
 
   queryLegacyLadders(playerObject: PlayerObject, options?: QueryOptions): Promise<object> {
-    const { regionId, realmId, profileId } = playerObject;
+    const {
+      regionId,
+      realmId,
+      profileId,
+    } = playerObject;
     return this.query(
       `/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/ladders`,
       options,
@@ -143,7 +152,11 @@ export default class StarCraft2API extends blizzapi {
   }
 
   queryLegacyMatchHistory(playerObject: PlayerObject, options?: QueryOptions): Promise<object> {
-    const { regionId, realmId, profileId } = playerObject;
+    const {
+      regionId,
+      realmId,
+      profileId,
+    } = playerObject;
     return this.query(
       `/sc2/legacy/profile/${regionId}/${realmId}/${profileId}/matches`,
       options,
@@ -182,12 +195,20 @@ export default class StarCraft2API extends blizzapi {
   }
 
   static getAllProfileUrlLocales = helpers.getAllProfileUrlLocales;
+
   static checkIfProfileUrlLocaleLooksValid = helpers.checkIfProfileUrlLocaleLooksValid;
+
   static validateProfileUrlLocale = helpers.validateProfileUrlLocale;
+
   static checkIfProfileUrlLooksValid = helpers.checkIfProfileUrlLooksValid;
+
   static validateProfileUrl = helpers.validateProfileUrl;
+
   static validateProfileId = helpers.validateProfileId;
+
   static unpackProfileUrl = helpers.unpackProfileUrl;
+
   static constructProfileUrl = helpers.constructProfileUrl;
+
   static profileUrlRegex = () => helpers.profileUrlRegex;
 }
