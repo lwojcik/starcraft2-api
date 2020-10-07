@@ -29,18 +29,12 @@ export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerPr
   const profileUrl = url.match(profileUrlRegex)![0];
   const profileDataArray = profileUrlRegex.exec(profileUrl)!;
 
-  const playerObject = {
+  return {
+    ...includeLocale && { locale: profileDataArray[1] },
     regionId: profileDataArray[2],
     realmId: profileDataArray[3],
     profileId: profileDataArray[4],
   };
-
-  return includeLocale
-    ? {
-      locale: profileDataArray[1],
-      ...playerObject,
-    }
-    : playerObject;
 };
 
 export const validateProfileUrl = (url: string, includeLocale?: boolean) => {
