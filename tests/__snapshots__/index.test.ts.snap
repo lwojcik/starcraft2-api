@@ -313,15 +313,20 @@ Array [
 ]
 `;
 
-exports[`StarCraft2API validateProfileUrl should match snapshot for invalid urls 1`] = `
+exports[`StarCraft2API validateProfileUrl should match snapshot for valid urls 1`] = `
 Array [
-  false,
-  false,
-  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
 ]
 `;
 
-exports[`StarCraft2API validateProfileUrl should match snapshot for valid urls 1`] = `
+exports[`StarCraft2API validateProfileUrl should match snapshot for valid urls with locale 1`] = `
 Array [
   true,
   true,

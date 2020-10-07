@@ -306,10 +306,29 @@ describe('StarCraft2API', () => {
       StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
   });
 
-  test('validateProfileUrl should match snapshot for invalid urls', () => {
-    expect(invalidProfileUrls.map(url =>
-      StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  test('validateProfileUrl should match snapshot for valid urls with locale', () => {
+    expect(validProfileUrls.map(url =>
+      StarCraft2API.validateProfileUrl(url, true))).toMatchSnapshot();
   });
+
+  // test('validateProfileUrl should match snapshot for invalid urls', () => {
+  //   expect(invalidProfileUrls.map(url =>
+  //     StarCraft2API.validateProfileUrl(url))).toMatchSnapshot();
+  // });
+
+  test(
+    'validateProfileUrl should throw RangeError for invalid urls',
+    async () => {
+      expect(() => invalidProfileUrls.map(url =>
+        StarCraft2API.validateProfileUrl(url))).toThrow(RangeError);
+    });
+
+  test(
+    'validateProfileUrlLocale should throw RangeError for malformed locales as parameters',
+    async () => {
+      expect(() => wrongProfileUrlLocales.map(locale =>
+        StarCraft2API.validateProfileUrlLocale(locale))).toThrow(RangeError);
+    });
 
   test('should expose validateProfileId method', () => {
     expect(StarCraft2API.validateProfileId).toBeDefined();
