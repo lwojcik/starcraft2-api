@@ -74,8 +74,8 @@ export const constructProfileUrl = (
 ) => {
   try {
     const validRegionId = BlizzAPI.validateRegionId(regionId);
-    const validProfileId = validateProfileId(profileId);
     const validRealmId = BlizzAPI.checkIfSc2RealmLooksValid(realmId);
+    const validProfileId = validateProfileId(profileId);
     const locale = localeName && validateProfileUrlLocale(localeName)
       ? localeName
       : 'en-us';
