@@ -68,8 +68,24 @@ npm run build
 
 * [starcraft2-api.lukem.net](https://starcraft2-api.lukem.net) - documentation
 * [starcraft2-api-docs](https://github.com/lukemnet/starcraft2-api-docs) - documentation repo on GitHub
-
 * [starcraft2-api-example](https://github.com/lukemnet/starcraft2-api-example) - sample Express.js REST API with usage examples
+
+## Contributions
+
+Contributions of any kind are welcome.
+
+You can contribute to StarCraft2-API by:
+
+* submiting a bug report or a feature suggestion
+* improving documentation either within the project itself or in the [doc site repository](https://github.com/lukemnet/starcraft2-api-docs)
+
+Before contributing be sure to read [Contributing Guidelines](https://github.com/lukemnet/starcraft2-api/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/lukemnet/starcraft2-api/blob/master/CODE_OF_CONDUCT.md).
+
+## Contributors
+
+To all who contribute code, improve documentation, submit issues or feature requests - thank you for making StarCraft2-API even better!
+
+We maintain an [AUTHORS](https://github.com/lukemnet/starcraft2-api/blob/master/AUTHORS) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
 
 ## License
 
