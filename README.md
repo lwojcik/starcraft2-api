@@ -28,7 +28,11 @@ const sc2api = new StarCraft2API({
   clientSecret: 'client secret'
 });
 
-const data = await sc2api.queryProfile({ regionId: 1, realmId: 1, profileId: 1084304 });
+const data = await sc2api.queryProfile({
+  regionId: 1,
+  realmId: 1,
+  profileId: 1084304,
+});
 
 console.log(data);
 ``` 
