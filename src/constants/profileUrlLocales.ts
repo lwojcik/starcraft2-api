@@ -1,7 +1,6 @@
 /**
  * List of locales used on StarCraft II website (StarCraft2.com)
  */
-
 const profileUrlLocales: ReadonlyArray<string> = [
   'en-us',
   'es-mx',

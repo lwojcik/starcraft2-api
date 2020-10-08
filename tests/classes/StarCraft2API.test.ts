@@ -1,4 +1,4 @@
-import StarCraft2API from '../../../src/lib/classes/StarCraft2API';
+import StarCraft2API from '../../src/classes/StarCraft2API';
 
 describe('StarCraft2API', () => {
   const player = {
@@ -114,15 +114,16 @@ describe('StarCraft2API', () => {
   ];
 
   const staticMethods = [
+    'checkIfProfileIdLooksValid',
     'getAllProfileUrlLocales',
     'checkIfProfileUrlLocaleLooksValid',
     'validateProfileUrlLocale',
     'checkIfProfileUrlLooksValid',
     'validateProfileUrl',
-    'validateProfileId',
     'unpackProfileUrl',
     'constructProfileUrl',
     'profileUrlRegex',
+    'profileUrlLocaleRegex',
   ];
 
   const sc2api = new StarCraft2API({

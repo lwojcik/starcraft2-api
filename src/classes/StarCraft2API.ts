@@ -1,36 +1,21 @@
-import blizzapi, {
-  BlizzAPIOptions,
+import BlizzAPI, {
   RegionIdAsNumberOrString,
   Locale,
-  Sc2Realm,
   QueryOptions,
 } from 'blizzapi';
-
 import * as helpers from '../helpers';
+import {
+  PlayerObject,
+  League,
+} from '../types.d';
 
-export interface StarCraft2APIOptions extends BlizzAPIOptions {}
-
-export interface League {
-  seasonId: number | string;
-  queueId: number | string;
-  teamType: number | string;
-  leagueId: number | string;
-}
-
-export interface PlayerObject {
-  regionId: RegionIdAsNumberOrString;
-  realmId: Sc2Realm;
-  profileId: number | string;
-  locale?: string;
-}
-
-export default class StarCraft2API extends blizzapi {
+export default class StarCraft2API extends BlizzAPI {
   queryStaticProfileData(
     regionId: RegionIdAsNumberOrString,
     locale?: Locale,
     options?: QueryOptions,
   ): Promise<object> {
-    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || BlizzAPI.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/static/profile/${regionId}?locale=${queryLocale}`,
       options,
@@ -43,7 +28,7 @@ export default class StarCraft2API extends blizzapi {
     options?: QueryOptions,
   ): Promise<object> {
     const { regionId, realmId, profileId } = playerObject;
-    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || BlizzAPI.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/metadata/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`,
       options,
@@ -56,7 +41,7 @@ export default class StarCraft2API extends blizzapi {
     options?: QueryOptions,
   ): Promise<object> {
     const { regionId, realmId, profileId } = playerObject;
-    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || BlizzAPI.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/profile/${regionId}/${realmId}/${profileId}?locale=${queryLocale}`,
       options,
@@ -69,7 +54,7 @@ export default class StarCraft2API extends blizzapi {
     options?: QueryOptions,
   ): Promise<object> {
     const { regionId, realmId, profileId } = playerObject;
-    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || BlizzAPI.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/summary?locale=${queryLocale}`,
       options,
@@ -83,7 +68,7 @@ export default class StarCraft2API extends blizzapi {
     options?: QueryOptions,
   ): Promise<object> {
     const { regionId, realmId, profileId } = playerObject;
-    const queryLocale = locale || blizzapi.getDefaultLocaleNameForRegionId(regionId);
+    const queryLocale = locale || BlizzAPI.getDefaultLocaleNameForRegionId(regionId);
     return this.query(
       `/sc2/profile/${regionId}/${realmId}/${profileId}/ladder/${ladderId}?locale=${queryLocale}`,
       options,
@@ -204,11 +189,13 @@ export default class StarCraft2API extends blizzapi {
 
   static validateProfileUrl = helpers.validateProfileUrl;
 
-  static validateProfileId = helpers.validateProfileId;
+  static checkIfProfileIdLooksValid = helpers.checkIfProfileIdLooksValid;
 
   static unpackProfileUrl = helpers.unpackProfileUrl;
 
   static constructProfileUrl = helpers.constructProfileUrl;
 
   static profileUrlRegex = () => helpers.profileUrlRegex;
+
+  static profileUrlLocaleRegex = () => helpers.profileUrlLocaleRegex;
 }
