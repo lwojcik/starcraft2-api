@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validateProfileUrl should match snapshot for valid URL //starcraft2.com/pl-pl/profile/1/1/1084304 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL //starcraft2.com/pl-pl/profile/1/1/1084304 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 2`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 with locale 2`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/123456789 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/123456789 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/2/1/234567890 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/2/1/234567890 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/3/1/345678901 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/3/1/345678901 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/5/1/456789012 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/5/1/456789012 with locale 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL starcraft2.com/ru-ru/profile/1/1/1084304 1`] = `true`;
+
+exports[`validateProfileUrl should match snapshot for valid URL starcraft2.com/ru-ru/profile/1/1/1084304 with locale 1`] = `true`;

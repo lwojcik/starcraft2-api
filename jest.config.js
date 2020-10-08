@@ -22,8 +22,5 @@ module.exports = {
     "!**/node_modules/**",
     "!**/dist/**"
   ],
-  "coveragePathIgnorePatterns": [
-    "!*.d.ts"
-  ],
   "automock": false
 }

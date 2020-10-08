@@ -3,7 +3,7 @@ import StarCraft2API from './classes/StarCraft2API';
 export {
   StarCraft2APIOptions,
   PlayerObject,
-} from './types.d';
+} from './types';
 
 export default StarCraft2API;
 

@@ -1,6 +1,6 @@
 import checkIfProfileUrlLooksValid from './checkIfProfileUrlLooksValid';
 import profileUrlRegex from './profileUrlRegex';
-import { PlayerObject } from '../../types.d';
+import { PlayerObject } from '../../types';
 
 export default (url: string, includeLocale?: boolean): PlayerObject | {} => {
   const urlIsValid = checkIfProfileUrlLooksValid(url);

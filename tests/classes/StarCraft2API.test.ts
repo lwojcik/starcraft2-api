@@ -164,4 +164,12 @@ describe('StarCraft2API', () => {
       expect(methodFn).toBeDefined();
     });
   });
+
+  it('profileUrlRegex should match snapshot', () => {
+    expect(StarCraft2API.profileUrlRegex()).toMatchSnapshot();
+  });
+
+  it('profileUrlLocaleRegex should match snapshot', () => {
+    expect(StarCraft2API.profileUrlLocaleRegex()).toMatchSnapshot();
+  });
 });

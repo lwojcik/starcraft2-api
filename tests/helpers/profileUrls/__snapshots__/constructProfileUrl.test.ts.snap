@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constructProfileUrl should match snapshot for invalid player object 1`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for invalid player object 2`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for invalid player object 3`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 1`] = `"https://starcraft2.com/en-us/profile/1/1/12453456"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 2`] = `"https://starcraft2.com/en-us/profile/2/2/34987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 3`] = `"https://starcraft2.com/en-us/profile/3/2/12987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 4`] = `"https://starcraft2.com/en-us/profile/1/1/12453456"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 5`] = `"https://starcraft2.com/en-us/profile/2/2/34987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object 6`] = `"https://starcraft2.com/en-us/profile/3/2/12987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 1`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 2`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 3`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 4`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 5`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and invalid locale 6`] = `""`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 1`] = `"https://starcraft2.com/en-us/profile/1/1/12453456"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 2`] = `"https://starcraft2.com/en-us/profile/2/2/34987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 3`] = `"https://starcraft2.com/en-us/profile/3/2/12987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 4`] = `"https://starcraft2.com/en-us/profile/1/1/12453456"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 5`] = `"https://starcraft2.com/en-us/profile/2/2/34987654"`;
+
+exports[`constructProfileUrl should match snapshot for valid player object and valid locale 6`] = `"https://starcraft2.com/en-us/profile/3/2/12987654"`;

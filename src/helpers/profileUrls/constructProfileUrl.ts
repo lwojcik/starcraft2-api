@@ -3,7 +3,7 @@ import checkIfProfileIdLooksValid from '../profileIds/checkIfProfileIdLooksValid
 import validateProfileUrlLocale from '../profileUrlLocales/validateProfileUrlLocale';
 import {
   PlayerObject,
-} from '../../types.d';
+} from '../../types';
 
 export default (
   {

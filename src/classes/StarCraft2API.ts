@@ -7,7 +7,7 @@ import * as helpers from '../helpers';
 import {
   PlayerObject,
   League,
-} from '../types.d';
+} from '../types';
 
 export default class StarCraft2API extends BlizzAPI {
   queryStaticProfileData(

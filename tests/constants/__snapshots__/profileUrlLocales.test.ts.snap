@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profileUrlLocales should match snapshot 1`] = `
+Array [
+  "en-us",
+  "es-mx",
+  "pt-br",
+  "de-de",
+  "en-gb",
+  "es-es",
+  "fr-fr",
+  "it-it",
+  "pl-pl",
+  "ru-ru",
+]
+`;

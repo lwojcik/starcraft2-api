@@ -1,0 +1,32 @@
+[
+  {
+    "regionId": 1,
+    "realmId": 1,
+    "profileId": 12453456
+  },
+  {
+    "regionId": 2,
+    "realmId": 2,
+    "profileId": 34987654
+  },
+  {
+    "regionId": 3,
+    "realmId": 2,
+    "profileId": 12987654
+  },
+  {
+    "regionId": "1",
+    "realmId": "1",
+    "profileId": "12453456"
+  },
+  {
+    "regionId": "2",
+    "realmId": "2",
+    "profileId": "34987654"
+  },
+  {
+    "regionId": "3",
+    "realmId": "2",
+    "profileId": "12987654"
+  }
+]

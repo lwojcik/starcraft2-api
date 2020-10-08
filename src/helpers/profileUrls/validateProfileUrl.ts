@@ -4,7 +4,7 @@ import validateProfileUrlLocale from '../profileUrlLocales/validateProfileUrlLoc
 import unpackProfileUrl from './unpackProfileUrl';
 import {
   PlayerObject,
-} from '../../types.d';
+} from '../../types';
 
 export default (url: string, includeLocale?: boolean) => {
   const profileObject = unpackProfileUrl(url, includeLocale) as PlayerObject;

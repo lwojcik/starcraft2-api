@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unpackProfileUrl should match snapshot for invalid URL 000test 1`] = `Object {}`;
+
+exports[`unpackProfileUrl should match snapshot for invalid URL loremipsum 1`] = `Object {}`;
+
+exports[`unpackProfileUrl should match snapshot for invalid URL starcraft2.com 1`] = `Object {}`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL //starcraft2.com/pl-pl/profile/1/1/1084304 1`] = `
+Object {
+  "profileId": "1084304",
+  "realmId": "1",
+  "regionId": "1",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 1`] = `
+Object {
+  "profileId": "1084304",
+  "realmId": "1",
+  "regionId": "1",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/1084304 2`] = `
+Object {
+  "profileId": "1084304",
+  "realmId": "1",
+  "regionId": "1",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/1/1/123456789 1`] = `
+Object {
+  "profileId": "123456789",
+  "realmId": "1",
+  "regionId": "1",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/2/1/234567890 1`] = `
+Object {
+  "profileId": "234567890",
+  "realmId": "1",
+  "regionId": "2",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/3/1/345678901 1`] = `
+Object {
+  "profileId": "345678901",
+  "realmId": "1",
+  "regionId": "3",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL https://starcraft2.com/en-us/profile/5/1/456789012 1`] = `
+Object {
+  "profileId": "456789012",
+  "realmId": "1",
+  "regionId": "5",
+}
+`;
+
+exports[`unpackProfileUrl should match snapshot for valid URL starcraft2.com/ru-ru/profile/1/1/1084304 1`] = `
+Object {
+  "profileId": "1084304",
+  "realmId": "1",
+  "regionId": "1",
+}
+`;
