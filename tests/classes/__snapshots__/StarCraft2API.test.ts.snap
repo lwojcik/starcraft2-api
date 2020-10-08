@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StarCraft2API profileUrlLocaleRegex should match snapshot 1`] = `
+Object {
+  "default": /\\^\\(\\?:\\[a-zA-Z\\]\\{2\\}-\\[a-zA-Z\\]\\{2\\}\\)\\$/i,
+}
+`;
+
+exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `
+Object {
+  "default": /starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(1\\|2\\{1\\}\\)\\\\/\\(\\[0-9\\]\\\\d\\*\\)/i,
+}
+`;
+
+exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/ladder/grandmaster/1",
+}
+`;
+
+exports[`StarCraft2API queryLadderSummary should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/profile/1/1/123/ladder/summary?locale=en_US",
+}
+`;
+
+exports[`StarCraft2API queryLeagueData should match snapshot 1`] = `
+Object {
+  "data": "sample data for /data/sc2/league/22/201/0/1",
+}
+`;
+
+exports[`StarCraft2API queryLegacyAchievements should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/data/achievements/1",
+}
+`;
+
+exports[`StarCraft2API queryLegacyLadder should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/ladder/1/123",
+}
+`;
+
+exports[`StarCraft2API queryLegacyLadders should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/profile/1/1/123/ladders",
+}
+`;
+
+exports[`StarCraft2API queryLegacyMatchHistory should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/profile/1/1/123/matches",
+}
+`;
+
+exports[`StarCraft2API queryLegacyProfile should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/profile/1/1/123",
+}
+`;
+
+exports[`StarCraft2API queryLegacyRewards should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/legacy/data/rewards/1",
+}
+`;
+
+exports[`StarCraft2API queryPlayerAccount should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/player/123",
+}
+`;
+
+exports[`StarCraft2API queryPlayerLadder should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/profile/1/1/123/ladder/123?locale=en_US",
+}
+`;
+
+exports[`StarCraft2API queryProfile should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/profile/1/1/123?locale=en_US",
+}
+`;
+
+exports[`StarCraft2API queryProfileMetadata should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/metadata/profile/1/1/123?locale=en_US",
+}
+`;
+
+exports[`StarCraft2API querySeason should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/ladder/season/1",
+}
+`;
+
+exports[`StarCraft2API queryStaticProfileData should match snapshot 1`] = `
+Object {
+  "data": "sample data for /sc2/static/profile/1?locale=en_US",
+}
+`;

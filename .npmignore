@@ -8,3 +8,8 @@ appveyor.yml
 .travis.yml
 jest.config.js
 .mergify.yml
+AUTHORS
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+.eslintrc
+.eslintignore

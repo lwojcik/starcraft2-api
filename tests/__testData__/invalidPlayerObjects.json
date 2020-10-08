@@ -1,0 +1,15 @@
+[
+  {
+    "realmId": "",
+    "profileId": ""
+  },
+  {
+    "regionId": "1",
+    "profileId": "1"
+  },
+  {
+    "regionId": 1,
+    "realmId": "",
+    "profileId": "1"
+  }
+]

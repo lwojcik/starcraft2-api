@@ -1,8 +1,11 @@
-import StarCraft2API, { StarCraft2APIOptions, PlayerObject } from './lib/classes/StarCraft2API';
+import StarCraft2API from './classes/StarCraft2API';
 
-export { StarCraft2APIOptions, PlayerObject };
+export {
+  StarCraft2APIOptions,
+  PlayerObject,
+} from './types';
+
 export default StarCraft2API;
 
 /* istanbul ignore next */
-// tslint:disable no-object-mutation
 if (module) module.exports = StarCraft2API;
