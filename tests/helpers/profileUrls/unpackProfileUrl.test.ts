@@ -14,4 +14,16 @@ describe('unpackProfileUrl', () => {
       expect(unpackProfileUrl(invalidProfileUrl)).toMatchSnapshot();
     });
   });
+
+  validProfileUrls.forEach(validProfileUrl => {
+    it(`should match snapshot for valid URL with locale ${validProfileUrl}`, () => {
+      expect(unpackProfileUrl(validProfileUrl, true)).toMatchSnapshot();
+    });
+  });
+
+  invalidProfileUrls.forEach(invalidProfileUrl => {
+    it(`should match snapshot for invalid URL with locale ${invalidProfileUrl}`, () => {
+      expect(unpackProfileUrl(invalidProfileUrl, true)).toMatchSnapshot();
+    });
+  });
 });
