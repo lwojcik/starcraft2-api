@@ -83,7 +83,7 @@ For automated unit testing, StarCraft2-API uses [Jest](https://jestjs.io/). All 
 Testing is done via:
 
 * manual and automatic mocks contained in `__mocks__` directory as well as within the test files,
-* reusable data sets contained within `__testData__` directory
+* reusable sample data sets contained within `__testData__` directory
 * auto-generated Jest snapshots within `__snapshots__` directory which describe desired outcome of code being tested
 
 All test components and assertions are treated as an integral part of project code.
