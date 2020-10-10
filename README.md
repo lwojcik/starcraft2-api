@@ -61,6 +61,7 @@ You can contribute to StarCraft2-API by:
 
 * submiting a bug report or a feature suggestion
 * improving documentation either within the project itself or in the [doc site repository](https://github.com/lukemnet/starcraft2-api-docs)
+* submitting pull requests
 
 Before contributing be sure to read [Contributing Guidelines](https://github.com/lukemnet/starcraft2-api/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/lukemnet/starcraft2-api/blob/master/CODE_OF_CONDUCT.md).
 
