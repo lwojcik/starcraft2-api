@@ -3,7 +3,7 @@
 # StarCraft2-API
 
 [![npm (latest)](https://img.shields.io/npm/v/starcraft2-api/latest.svg)](https://www.npmjs.com/package/starcraft2-api)
-[![Travis CI Build Status](https://travis-ci.org/lukemnet/starcraft2-api.svg?branch=master)](https://travis-ci.org/lukemnet/starcraft2-api)
+[![Travis CI Build Status](https://travis-ci.com/lukemnet/starcraft2-api.svg?branch=master)](https://travis-ci.com/lukemnet/starcraft2-api)
 [![Maintainability](https://api.codeclimate.com/v1/badges/77186f38dbab09a28a6d/maintainability)](https://codeclimate.com/github/lukemnet/starcraft2-api/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/77186f38dbab09a28a6d/test_coverage)](https://codeclimate.com/github/lukemnet/starcraft2-api/test_coverage)
 
