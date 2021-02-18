@@ -1,16 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StarCraft2API profileUrlLocaleRegex should match snapshot 1`] = `
-Object {
-  "default": /\\^\\(\\?:\\[a-zA-Z\\]\\{2\\}-\\[a-zA-Z\\]\\{2\\}\\)\\$/i,
-}
-`;
+exports[`StarCraft2API profileUrlLocaleRegex should match snapshot 1`] = `/\\^\\(\\?:\\[a-zA-Z\\]\\{2\\}-\\[a-zA-Z\\]\\{2\\}\\)\\$/i`;
 
-exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `
-Object {
-  "default": /starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(1\\|2\\{1\\}\\)\\\\/\\(\\[0-9\\]\\\\d\\*\\)/i,
-}
-`;
+exports[`StarCraft2API profileUrlRegex should match snapshot 1`] = `/starcraft2\\\\\\.com\\\\/\\(\\[A-z\\]\\{2\\}-\\[A-z\\]\\{2\\}\\)\\\\/profile\\\\/\\(1\\|2\\|3\\|5\\{1\\}\\)\\\\/\\(1\\|2\\{1\\}\\)\\\\/\\(\\[0-9\\]\\\\d\\*\\)/i`;
 
 exports[`StarCraft2API queryGrandmasterLeaderboard should match snapshot 1`] = `
 Object {
