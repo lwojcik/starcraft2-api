@@ -16,4 +16,4 @@ build_script:
   - npm run build
 
 test_script:
-  - codecov
+  - npx codecov
