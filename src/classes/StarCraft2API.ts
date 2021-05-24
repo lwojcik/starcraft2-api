@@ -1,4 +1,5 @@
-import BlizzAPI, {
+import {
+  BlizzAPI,
   RegionIdAsNumberOrString,
   Locale,
   QueryOptions,

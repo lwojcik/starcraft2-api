@@ -1,4 +1,4 @@
-import BlizzAPI from 'blizzapi';
+import { BlizzAPI } from 'blizzapi';
 import checkIfProfileIdLooksValid from '../profileIds/checkIfProfileIdLooksValid';
 import validateProfileUrlLocale from '../profileUrlLocales/validateProfileUrlLocale';
 import unpackProfileUrl from './unpackProfileUrl';
