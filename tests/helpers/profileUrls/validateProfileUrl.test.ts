@@ -1,4 +1,4 @@
-import validateProfileUrl from '../../../src/helpers/profileUrls/validateProfileUrl';
+import { validateProfileUrl } from '../../../src/helpers/profileUrls/validateProfileUrl';
 import validProfileUrls from '../../__testData__/profileUrls.json';
 import invalidProfileUrls from '../../__testData__/invalidProfileUrls.json';
 

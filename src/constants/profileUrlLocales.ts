@@ -1,7 +1,7 @@
 /**
  * List of locales used on StarCraft II website (StarCraft2.com)
  */
-const profileUrlLocales: ReadonlyArray<string> = [
+export const profileUrlLocales = Object.freeze([
   'en-us',
   'es-mx',
   'pt-br',
@@ -12,6 +12,4 @@ const profileUrlLocales: ReadonlyArray<string> = [
   'it-it',
   'pl-pl',
   'ru-ru',
-];
-
-export default Object.freeze(profileUrlLocales);
+]);

@@ -1,10 +1,14 @@
-export { default as checkIfProfileIdLooksValid } from './profileIds/checkIfProfileIdLooksValid';
-export { default as checkIfProfileUrlLocaleLooksValid } from './profileUrlLocales/checkIfProfileUrlLocaleLooksValid';
-export { default as getAllProfileUrlLocales } from './profileUrlLocales/getAllProfileUrlLocales';
-export { default as profileUrlLocaleRegex } from './profileUrlLocales/profileUrlLocaleRegex';
-export { default as validateProfileUrlLocale } from './profileUrlLocales/validateProfileUrlLocale';
-export { default as checkIfProfileUrlLooksValid } from './profileUrls/checkIfProfileUrlLooksValid';
-export { default as constructProfileUrl } from './profileUrls/constructProfileUrl';
-export { default as profileUrlRegex } from './profileUrls/profileUrlRegex';
-export { default as unpackProfileUrl } from './profileUrls/unpackProfileUrl';
-export { default as validateProfileUrl } from './profileUrls/validateProfileUrl';
+export { checkIfProfileIdLooksValid } from './profileIds';
+export {
+  checkIfProfileUrlLocaleLooksValid,
+  getAllProfileUrlLocales,
+  profileUrlLocaleRegex,
+  validateProfileUrlLocale,
+} from './profileUrlLocales';
+export {
+  checkIfProfileUrlLooksValid,
+  constructProfileUrl,
+  profileUrlRegex,
+  unpackProfileUrl,
+  validateProfileUrl,
+} from './profileUrls';

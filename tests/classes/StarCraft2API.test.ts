@@ -1,4 +1,4 @@
-import StarCraft2API from '../../src/classes/StarCraft2API';
+import { StarCraft2API } from '../../src/classes/StarCraft2API';
 
 describe('StarCraft2API', () => {
   const player = {

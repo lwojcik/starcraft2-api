@@ -1,4 +1,4 @@
-import constructProfileUrl from '../../../src/helpers/profileUrls/constructProfileUrl';
+import { constructProfileUrl } from '../../../src/helpers/profileUrls/constructProfileUrl';
 import playerObjects from '../../__testData__/playerObjects.json';
 import invalidPlayerObjects from '../../__testData__/invalidPlayerObjects.json';
 import { PlayerObject } from '../../../src/types';

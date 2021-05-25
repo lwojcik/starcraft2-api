@@ -10,7 +10,7 @@ import {
   League,
 } from '../types';
 
-export default class StarCraft2API extends BlizzAPI {
+export class StarCraft2API extends BlizzAPI {
   queryStaticProfileData(
     regionId: RegionIdAsNumberOrString,
     locale?: Locale,

@@ -1,4 +1,4 @@
-import unpackProfileUrl from '../../../src/helpers/profileUrls/unpackProfileUrl';
+import { unpackProfileUrl } from '../../../src/helpers/profileUrls/unpackProfileUrl';
 import validProfileUrls from '../../__testData__/profileUrls.json';
 import invalidProfileUrls from '../../__testData__/invalidProfileUrls.json';
 

@@ -1,5 +1,5 @@
-import validateProfileUrlLocale from '../../../src/helpers/profileUrlLocales/validateProfileUrlLocale';
-import profileUrlLocales from '../../../src/constants/profileUrlLocales';
+import { validateProfileUrlLocale } from '../../../src/helpers/profileUrlLocales/validateProfileUrlLocale';
+import { profileUrlLocales } from '../../../src/constants/profileUrlLocales';
 import nonExistentProfileUrlLocales from '../../__testData__/nonExistentProfileUrlLocales.json';
 import malformedProfileUrlLocales from '../../__testData__/malformedProfileUrlLocales.json';
 
