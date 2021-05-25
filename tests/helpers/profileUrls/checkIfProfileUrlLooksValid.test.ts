@@ -1,4 +1,4 @@
-import checkIfProfileUrlLooksValid from '../../../src/helpers/profileUrls/checkIfProfileUrlLooksValid';
+import { checkIfProfileUrlLooksValid } from '../../../src/helpers/profileUrls/checkIfProfileUrlLooksValid';
 import validProfileUrls from '../../__testData__/profileUrls.json';
 import invalidProfileUrls from '../../__testData__/invalidProfileUrls.json';
 

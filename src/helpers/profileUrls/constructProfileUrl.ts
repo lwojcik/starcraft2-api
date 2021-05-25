@@ -1,11 +1,11 @@
 import { BlizzAPI } from 'blizzapi';
-import checkIfProfileIdLooksValid from '../profileIds/checkIfProfileIdLooksValid';
-import validateProfileUrlLocale from '../profileUrlLocales/validateProfileUrlLocale';
+import { checkIfProfileIdLooksValid } from '../profileIds/checkIfProfileIdLooksValid';
+import { validateProfileUrlLocale } from '../profileUrlLocales/validateProfileUrlLocale';
 import {
   PlayerObject,
 } from '../../types';
 
-export default (
+export const constructProfileUrl = (
   {
     regionId,
     realmId,

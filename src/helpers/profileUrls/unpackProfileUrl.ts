@@ -1,8 +1,8 @@
-import checkIfProfileUrlLooksValid from './checkIfProfileUrlLooksValid';
-import profileUrlRegex from './profileUrlRegex';
+import { checkIfProfileUrlLooksValid } from './checkIfProfileUrlLooksValid';
+import { profileUrlRegex } from './profileUrlRegex';
 import { PlayerObject } from '../../types';
 
-export default (url: string, includeLocale?: boolean): PlayerObject | {} => {
+export const unpackProfileUrl = (url: string, includeLocale?: boolean): PlayerObject | {} => {
   const urlIsValid = checkIfProfileUrlLooksValid(url);
 
   if (!urlIsValid) return {};

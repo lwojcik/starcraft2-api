@@ -1,4 +1,4 @@
-import checkIfProfileIdLooksValid from '../../../src/helpers/profileIds/checkIfProfileIdLooksValid';
+import { checkIfProfileIdLooksValid } from '../../../src/helpers/profileIds/checkIfProfileIdLooksValid';
 import validProfileIds from '../../__testData__/profileIds.json';
 import invalidProfileIds from '../../__testData__/invalidProfileIds.json';
 

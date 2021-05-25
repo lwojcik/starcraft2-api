@@ -1,12 +1,12 @@
 import { BlizzAPI } from 'blizzapi';
-import checkIfProfileIdLooksValid from '../profileIds/checkIfProfileIdLooksValid';
-import validateProfileUrlLocale from '../profileUrlLocales/validateProfileUrlLocale';
-import unpackProfileUrl from './unpackProfileUrl';
+import { checkIfProfileIdLooksValid } from '../profileIds/checkIfProfileIdLooksValid';
+import { validateProfileUrlLocale } from '../profileUrlLocales/validateProfileUrlLocale';
+import { unpackProfileUrl } from './unpackProfileUrl';
 import {
   PlayerObject,
 } from '../../types';
 
-export default (url: string, includeLocale?: boolean) => {
+export const validateProfileUrl = (url: string, includeLocale?: boolean) => {
   const profileObject = unpackProfileUrl(url, includeLocale) as PlayerObject;
 
   if (Object.keys(profileObject).length === 0) {

@@ -18,7 +18,12 @@ npm install starcraft2-api
 ## Quick start
 
 ```javascript
-const StarCraft2API = require('starcraft2-api');
+const { StarCraft2API } = require('starcraft2-api');
+
+/**
+ * Or using TypeScript / ES6 import:
+ * import { StarCraft2API } from 'StarCraft2API';
+ */
 
 const sc2api = new StarCraft2API({
   region: 'us',
