@@ -6,12 +6,12 @@ You can contribute to the project in many ways:
 
 * file a bug report
 * suggest a feature
-* improve documentation either within the project itself or the [doc site repository](https://github.com/lukemnet/starcraft2-api-docs)
+* improve documentation either within the project itself or the [doc site repository](https://github.com/blizzapi/starcraft2-api-docs)
 * submit a pull request
 
 ## Bug reports
 
-If you encounter unexpected behavior, design flaw or any other kind of error that needs to be fixed, feel free to file a bug report in [Issues section on GitHub](https://github.com/lukemnet/starcraft2-api-docs/issues).
+If you encounter unexpected behavior, design flaw or any other kind of error that needs to be fixed, feel free to file a bug report in [Issues section on GitHub](https://github.com/blizzapi/starcraft2-api-docs/issues).
 
 There is no specific format you have to follow while filing your report. However, it's highly advisable you include at least some of following information:
 
@@ -32,13 +32,13 @@ There is no specific format you have to follow while filling your request. Just 
 Documentation in StarCraft2-API exists primarily in two forms:
 
 * Text files such as README.md that function alongside project code
-* Documentation site maintained at https://github.com/lukemnet/starcraft2-api-docs
+* Documentation site maintained at https://github.com/blizzapi/starcraft2-api-docs
 
 Feel free to submit any relevant fixes (typos, error corrections, improvements to code samples) regardless of how trivial they seem.
 
 ## Pull requests
 
-Code patches that add features or fix bugs can be sent as [pull requests on GitHub](https://github.com/lukemnet/starcraft2-api/pulls).
+Code patches that add features or fix bugs can be sent as [pull requests on GitHub](https://github.com/blizzapi/starcraft2-api/pulls).
 
 To make the process of merging your pull request as quick as possible, be sure to read and follow the guidelines below:
 
@@ -56,7 +56,7 @@ To make the process of merging your pull request as quick as possible, be sure t
 
 ## Technical information
 
-This section intends to explain how the project works from the developer's point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/lukemnet/starcraft2-api/issues).
+This section intends to explain how the project works from the developer's point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/blizzapi/starcraft2-api/issues).
 
 ### Development
 
@@ -66,7 +66,7 @@ Full project build, including linting and testing, can be triggered with `npm ru
 
 Type definitions are storted in `types.ts` file. Storing them in a separate file allows for reusing them in multiple places.
 
-StarCraft2-API uses [BlizzAPI](https://github.com/lukemnet/blizzapi) for authenticating and fetching data from Blizzard Battle.net APIs.
+StarCraft2-API uses [BlizzAPI](https://github.com/blizzapi/blizzapi) for authenticating and fetching data from Blizzard Battle.net APIs.
 
 ### Code conventions / linting
 
@@ -98,4 +98,4 @@ Note that automated unit tests are powerful tool for quick quality control, but 
 
 ### Releases
 
-Whenever possible, StarCraft2-API follows [semantic versioning](https://semver.org/) for all releases available in [Releases section on GitHub](https://github.com/lukemnet/starcraft2-api/releases) and on [NPM package manager](https://www.npmjs.com/package/starcraft2-api). The project is considered production-ready and it doesn't follow any specific release schedule.
+Whenever possible, StarCraft2-API follows [semantic versioning](https://semver.org/) for all releases available in [Releases section on GitHub](https://github.com/blizzapi/starcraft2-api/releases) and on [NPM package manager](https://www.npmjs.com/package/starcraft2-api). The project is considered production-ready and it doesn't follow any specific release schedule.
