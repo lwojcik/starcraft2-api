@@ -8,21 +8,21 @@
   "browser": "dist/index.umd.js",
   "typings": "dist/index.d.ts",
   "author": {
-    "name": "Łukasz Wójcik",
-    "url": "https://www.lukem.net/"
+    "name": "BlizzAPI + Contributors",
+    "url": "https://github.com/blizzapi"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lukemnet/starcraft2-api.git"
+    "url": "git://github.com/blizzapi/starcraft2-api.git"
   },
   "bugs": {
-    "url": "https://github.com/lukemnet/starcraft2-api/issues"
+    "url": "https://github.com/blizzapi/starcraft2-api/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lukemnet/starcraft2-api/blob/master/LICENSE"
+      "url": "https://github.com/blizzapi/starcraft2-api/blob/master/LICENSE"
     }
   ],
   "scripts": {
